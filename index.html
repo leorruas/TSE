@@ -13,7 +13,7 @@
     header{padding:8px 0 26px;border-bottom:1px solid var(--line);margin-bottom:16px}
     h1{margin:0 0 9px;font-size:clamp(30px,6vw,48px);line-height:1;letter-spacing:-.045em}
     header p,.meta{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
-    .status{display:flex;gap:8px;align-items:center;margin-top:13px}.dot{width:8px;height:8px;border-radius:50%;background:#999}.dot.live{background:var(--green)}
+    .status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:13px}.dot{width:8px;height:8px;border-radius:50%;background:#999}.dot.live{background:var(--green)}.refresh{margin-left:auto;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:7px 11px;font:inherit;font-size:13px;cursor:pointer}.refresh:disabled{opacity:.55;cursor:default}
     nav{display:flex;gap:7px;overflow:auto;padding:0 0 14px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
     nav a{white-space:nowrap;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:13px}
     section{background:var(--paper);border:1px solid var(--line);border-radius:12px;margin-bottom:13px;overflow:hidden;scroll-margin-top:10px}
@@ -34,7 +34,7 @@
   <header>
     <h1>Apuração 2026 MG</h1>
     <p>Presidente no Brasil e eleições de Minas Gerais.</p>
-    <div class="status" aria-live="polite"><span class="dot" id="dot"></span><span class="meta" id="status">Carregando resultados…</span></div>
+    <div class="status" aria-live="polite"><span class="dot" id="dot"></span><span class="meta" id="status">Carregando resultados…</span><button class="refresh" id="refresh" type="button">Atualizar agora</button></div>
   </header>
 
   <nav aria-label="Ir para cargo">
@@ -168,6 +168,8 @@ async function syncTime(){
 }
 
 async function refresh(){
+  const button = document.querySelector('#refresh');
+  if(button){ button.disabled = true; button.textContent = 'Atualizando…'; }
   const [results, updated] = await Promise.all([
     Promise.all(races.map(load)),
     syncTime()
@@ -178,8 +180,10 @@ async function refresh(){
     : loaded ? loaded+' de '+races.length+' resultados carregados' : 'Aguardando primeira sincronização';
   document.querySelector('#status').textContent = label;
   document.querySelector('#dot').className = 'dot' + (loaded ? ' live' : '');
+  if(button){ button.disabled = false; button.textContent = 'Atualizar agora'; }
 }
 
+document.querySelector('#refresh').addEventListener('click', refresh);
 refresh();
 setInterval(refresh, 30000);
 </script>
