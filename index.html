@@ -16,6 +16,7 @@
     .status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:13px}.dot{width:8px;height:8px;border-radius:50%;background:#999}.dot.live{background:var(--green)}.refresh{margin-left:auto;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:7px 11px;font:inherit;font-size:13px;cursor:pointer}.refresh:disabled{opacity:.55;cursor:default}
     nav{display:flex;gap:7px;overflow:auto;padding:0 0 14px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
     nav a{white-space:nowrap;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:13px}
+    .region-total{font-size:32px;font-weight:750;letter-spacing:-.03em}.region-summary{padding:16px;border-bottom:1px solid var(--line)}
     section{background:var(--paper);border:1px solid var(--line);border-radius:12px;margin-bottom:13px;overflow:hidden;scroll-margin-top:10px}
     .head{padding:16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:flex-end}
     h2{font-size:20px;letter-spacing:-.02em;margin:0}.scope{font-size:12px;color:var(--muted);margin-top:3px}.progress{font-weight:700;font-size:18px;white-space:nowrap}
@@ -38,6 +39,7 @@
   </header>
 
   <nav aria-label="Ir para cargo">
+    <a href="#nordeste">Nordeste</a>
     <a href="#presidente">Presidente</a>
     <a href="#governador">Governador</a>
     <a href="#senador">Senador</a>
@@ -45,11 +47,19 @@
     <a href="#estadual">Dep. estadual</a>
   </nav>
 
+  <section id="nordeste">
+    <div class="head">
+      <div><h2>Nordeste apurado</h2><div class="scope">9 estados · Presidente</div></div>
+      <div class="head-right"><div class="progress" id="nordeste-progress">—</div><div class="seats">seções totalizadas</div></div>
+    </div>
+    <div id="nordeste-body" class="message">Carregando…</div>
+  </section>
+
   <div id="app"></div>
 
   <footer>
     Dados oficiais do <a href="https://resultados.tse.jus.br/" target="_blank" rel="noreferrer">Tribunal Superior Eleitoral</a>,
-    sincronizados neste repositório aproximadamente a cada 5 minutos. Página independente, sem vínculo com a Justiça Eleitoral.
+    sincronizados neste repositório durante a apuração. Página independente, sem vínculo com a Justiça Eleitoral.
   </footer>
 </main>
 
@@ -168,6 +178,38 @@ async function load(r){
   }
 }
 
+const ufNames={AL:'Alagoas',BA:'Bahia',CE:'Ceará',MA:'Maranhão',PB:'Paraíba',PE:'Pernambuco',PI:'Piauí',RN:'Rio Grande do Norte',SE:'Sergipe'};
+
+async function loadNordeste(){
+  const body=document.querySelector('#nordeste-body');
+  try{
+    const response=await fetch('data/nordeste.json?t='+Date.now(),{cache:'no-store'});
+    if(!response.ok) throw new Error('HTTP '+response.status);
+    const data=await response.json();
+    const pct=Number(data.percentual_totalizado ?? 0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';
+    document.querySelector('#nordeste-progress').textContent=pct;
+    const states=[...(data.estados||[])].sort((a,b)=>Number(b.percentual_totalizado)-Number(a.percentual_totalizado));
+    body.className='';
+    body.innerHTML = `
+      <div class="region-summary">
+        <div class="region-total">${pct}</div>
+        <div class="scope">${formatter.format(number(data.secoes_totalizadas))} de ${formatter.format(number(data.total_secoes))} seções totalizadas</div>
+      </div>` +
+      states.map(s=>`
+        <div class="row">
+          <div class="name">${escapeHtml(ufNames[s.uf] || s.uf || '')}</div>
+          <div class="right"><div class="votes">${percent(s.percentual_totalizado)}</div><div class="share">${formatter.format(number(s.secoes_totalizadas))} / ${formatter.format(number(s.total_secoes))} seções</div></div>
+        </div>`
+      ).join('');
+    return true;
+  }catch(error){
+    document.querySelector('#nordeste-progress').textContent='—';
+    body.className='message';
+    body.textContent='Aguardando a primeira sincronização regional.';
+    return false;
+  }
+}
+
 async function syncTime(){
   try{
     const response=await fetch('data/meta.json?t='+Date.now(),{cache:'no-store'});
@@ -190,7 +232,8 @@ async function refresh(){
   if(button){ button.disabled = true; button.textContent = 'Atualizando…'; }
   const [results, updated] = await Promise.all([
     Promise.all(races.map(load)),
-    syncTime()
+    syncTime(),
+    loadNordeste()
   ]);
   const loaded = results.filter(Boolean).length;
   const label = updated
