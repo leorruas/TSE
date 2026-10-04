@@ -1,5 +1,5 @@
 
-{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "go", "dg" : "04/10/2026", "hg" : "20:44:49", "idg" : "1792519", "dt" : "04/10/2026", "ht" : "20:44:35", "dv" : "s", "tf" : "n", "and" : "p", "carg" : [ 
+{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "go", "dg" : "04/10/2026", "hg" : "20:45:32", "idg" : "1797327", "dt" : "04/10/2026", "ht" : "20:44:35", "dv" : "s", "tf" : "n", "and" : "p", "carg" : [ 
 { "cd" : "5", "nmn" : "Senador", "nmm" : "Senador", "nmf" : "Senadora", "nv" : "2", "fed" : [ 
 { "n" : "100", "sg" : "PSDB/CIDADANIA", "nm" : "FEDERAÇÃO PSDB CIDADANIA", "com" : "PSDB/CIDADANIA", "npar" : [ "23", "45" ] }, 
 { "n" : "103", "sg" : "PRD/SOLIDARIEDADE", "nm" : "FEDERAÇÃO RENOVAÇÃO SOLIDÁRIA", "com" : "PRD/SOLIDARIEDADE", "npar" : [ "25", "77" ] }, 
@@ -15,11 +15,6 @@
 { "n" : "444", "sqcand" : "90002540997", "nm" : "MARIA DAS GRAÇAS LANDIM DE CARVALHO CAIADO", "nmu" : "GRACINHA CAIADO", "dt" : "30/04/1959", "dvt" : "Válido", "seq" : "2", "e" : "n", "st" : "", "vap" : "1414960", "pvap" : "21,72", "pvapn" : "21,722183382", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002540996", "nm" : "ALEXANDRE BALDY DE SANT ANNA BRAGA", "nmu" : "ALEXANDRE BALDY", "sgp" : "PP" }, 
 { "tp" : "s2", "sqcand" : "90002540995", "nm" : "MANOEL CASTRO DE ARANTES", "nmu" : "FIÃO", "sgp" : "UNIÃO" } ] } ] } ] }, 
-{ "n" : "90001800848", "nm" : "MOVIMENTO DEMOCRÁTICO BRASILEIRO", "tp" : "i", "com" : "MDB", "vag" : "0", "par" : [ 
-{ "n" : "15", "sg" : "MDB", "nm" : "MOVIMENTO DEMOCRÁTICO BRASILEIRO", "nfed" : "", "tvtn" : "976430", "tvan" : "976430", "cand" : [ 
-{ "n" : "155", "sqcand" : "90002546974", "nm" : "ZACARIAS CALIL HAMU", "nmu" : "DR. ZACHARIAS CALIL", "dt" : "05/11/1953", "dvt" : "Válido", "seq" : "3", "e" : "n", "st" : "", "vap" : "976430", "pvap" : "14,99", "pvapn" : "14,989958387", "vs" : [ 
-{ "tp" : "s1", "sqcand" : "90002554305", "nm" : "LEONARDO MARIANO REIS", "nmu" : "LEONARDO REIS", "sgp" : "MDB" }, 
-{ "tp" : "s2", "sqcand" : "90002546976", "nm" : "MARIA DA CONCEIÇÃO ALVES", "nmu" : "CONCEIÇÃO DO ENTORNO", "sgp" : "MDB" } ] } ] } ] }, 
 { "n" : "90001800646", "nm" : "GOIAS QUE CRESCE", "tp" : "c", "com" : "PL / NOVO", "tvtn" : "2266434", "tvan" : "2266434", "par" : [ 
 { "n" : "22", "sg" : "PL", "nm" : "PARTIDO LIBERAL", "nfed" : "", "tvtn" : "2266434", "tvan" : "2266434", "cand" : [ 
 { "n" : "222", "sqcand" : "90002543556", "nm" : "GUSTAVO GAYER MACHADO DE ARAUJO", "nmu" : "GUSTAVO GAYER", "dt" : "13/04/1981", "dvt" : "Válido", "seq" : "1", "e" : "n", "st" : "", "vap" : "1603227", "pvap" : "24,61", "pvapn" : "24,612420773", "vs" : [ 
@@ -28,16 +23,21 @@
 { "n" : "227", "sqcand" : "90002543560", "nm" : "OSEIAS MENDES PEREIRA VARÃO", "nmu" : "OSÉIAS VARÃO", "dt" : "25/01/1977", "dvt" : "Válido", "seq" : "4", "e" : "n", "st" : "", "vap" : "663207", "pvap" : "10,18", "pvapn" : "10,181421435", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002543557", "nm" : "TELEMACO BRANDAO", "nmu" : "TELEMACO BRANDÃO", "sgp" : "NOVO" }, 
 { "tp" : "s2", "sqcand" : "90002543559", "nm" : "TEOBALDO DE QUEIROZ GOMES", "nmu" : "TÉO GOMES", "sgp" : "PL" } ] } ] } ] }, 
-{ "n" : "90001800668", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "tp" : "i", "com" : "PSD", "vag" : "0", "par" : [ 
-{ "n" : "55", "sg" : "PSD", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "nfed" : "", "tvtn" : "613487", "tvan" : "613487", "cand" : [ 
-{ "n" : "555", "sqcand" : "90002543215", "nm" : "VANDERLAN VIEIRA CARDOSO", "nmu" : "VANDERLAN CARDOSO", "dt" : "15/11/1962", "dvt" : "Válido", "seq" : "5", "e" : "n", "st" : "", "vap" : "613487", "pvap" : "9,42", "pvapn" : "9,418129924", "vs" : [ 
-{ "tp" : "s1", "sqcand" : "90002543216", "nm" : "PEDRO PINHEIRO CHAVES", "nmu" : "PEDRO CHAVES", "sgp" : "PSD" }, 
-{ "tp" : "s2", "sqcand" : "90002543214", "nm" : "SAMIR HAJJAR", "nmu" : "SAMIR HAJJAR", "sgp" : "PSD" } ] } ] } ] }, 
+{ "n" : "90001800848", "nm" : "MOVIMENTO DEMOCRÁTICO BRASILEIRO", "tp" : "i", "com" : "MDB", "vag" : "0", "par" : [ 
+{ "n" : "15", "sg" : "MDB", "nm" : "MOVIMENTO DEMOCRÁTICO BRASILEIRO", "nfed" : "", "tvtn" : "976430", "tvan" : "976430", "cand" : [ 
+{ "n" : "155", "sqcand" : "90002546974", "nm" : "ZACARIAS CALIL HAMU", "nmu" : "DR. ZACHARIAS CALIL", "dt" : "05/11/1953", "dvt" : "Válido", "seq" : "3", "e" : "n", "st" : "", "vap" : "976430", "pvap" : "14,99", "pvapn" : "14,989958387", "vs" : [ 
+{ "tp" : "s1", "sqcand" : "90002554305", "nm" : "LEONARDO MARIANO REIS", "nmu" : "LEONARDO REIS", "sgp" : "MDB" }, 
+{ "tp" : "s2", "sqcand" : "90002546976", "nm" : "MARIA DA CONCEIÇÃO ALVES", "nmu" : "CONCEIÇÃO DO ENTORNO", "sgp" : "MDB" } ] } ] } ] }, 
 { "n" : "90001801175", "nm" : "UNIDADE POPULAR", "tp" : "i", "com" : "UP", "vag" : "0", "par" : [ 
 { "n" : "80", "sg" : "UP", "nm" : "UNIDADE POPULAR", "nfed" : "", "tvtn" : "7050", "tvan" : "7050", "cand" : [ 
 { "n" : "800", "sqcand" : "90002551198", "nm" : "GUILHERME DARQUES ALVES DE PAULA", "nmu" : "GUILHERME DARQUES", "dt" : "07/08/1990", "dvt" : "Válido", "seq" : "11", "e" : "n", "st" : "", "vap" : "7050", "pvap" : "0,11", "pvapn" : "0,108230192", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002551199", "nm" : "AUGUSTO CARDOSO DE OLIVEIRA", "nmu" : "AUGUSTO CARDOSO", "sgp" : "UP" }, 
 { "tp" : "s2", "sqcand" : "90002551197", "nm" : "VICTOR BARBO DE SIQUEIRA", "nmu" : "VICTOR BARBO", "sgp" : "UP" } ] } ] } ] }, 
+{ "n" : "90001800668", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "tp" : "i", "com" : "PSD", "vag" : "0", "par" : [ 
+{ "n" : "55", "sg" : "PSD", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "nfed" : "", "tvtn" : "613487", "tvan" : "613487", "cand" : [ 
+{ "n" : "555", "sqcand" : "90002543215", "nm" : "VANDERLAN VIEIRA CARDOSO", "nmu" : "VANDERLAN CARDOSO", "dt" : "15/11/1962", "dvt" : "Válido", "seq" : "5", "e" : "n", "st" : "", "vap" : "613487", "pvap" : "9,42", "pvapn" : "9,418129924", "vs" : [ 
+{ "tp" : "s1", "sqcand" : "90002543216", "nm" : "PEDRO PINHEIRO CHAVES", "nmu" : "PEDRO CHAVES", "sgp" : "PSD" }, 
+{ "tp" : "s2", "sqcand" : "90002543214", "nm" : "SAMIR HAJJAR", "nmu" : "SAMIR HAJJAR", "sgp" : "PSD" } ] } ] } ] }, 
 { "n" : "90001800484", "nm" : "GOIÁS PODE MAIS", "tp" : "c", "com" : "PDT / PSB / PCDOB / PT / PV / PSOL / REDE", "tvtn" : "619879", "tvan" : "619879", "par" : [ 
 { "n" : "40", "sg" : "PSB", "nm" : "PARTIDO SOCIALISTA BRASILEIRO", "nfed" : "", "tvtn" : "339051", "tvan" : "339051", "cand" : [ 
 { "n" : "400", "sqcand" : "90002541455", "nm" : "MARIA ISAURA LEMOS", "nmu" : "ISAURA LEMOS", "dt" : "22/05/1954", "dvt" : "Válido", "seq" : "7", "e" : "n", "st" : "", "vap" : "339051", "pvap" : "5,21", "pvapn" : "5,205043251", "vs" : [ 
