@@ -2,7 +2,7 @@ name: Atualizar dados do TSE
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "0 * * * *"
   workflow_dispatch:
   push:
     branches: ["main"]
@@ -19,6 +19,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 330
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -56,9 +57,12 @@ jobs:
             fi
           }
 
-          for i in 1 2 3 4 5; do
+          # Mantém um único runner acompanhando a apuração por cerca de 5 horas.
+          # Assim, durante a noite da eleição, não dependemos da pontualidade
+          # do scheduler do GitHub para obter atualização minuto a minuto.
+          for i in $(seq 1 300); do
             sync_once
-            if [ "$i" -lt 5 ]; then
+            if [ "$i" -lt 300 ]; then
               sleep 60
             fi
           done
