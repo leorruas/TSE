@@ -1,61 +1,61 @@
 
-{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "es", "dg" : "04/10/2026", "hg" : "20:02:04", "idg" : "1701831", "dt" : "04/10/2026", "ht" : "19:31:56", "dv" : "s", "tf" : "n", "and" : "p", "carg" : [ 
+{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "es", "dg" : "04/10/2026", "hg" : "20:07:31", "idg" : "1697319", "dt" : "04/10/2026", "ht" : "20:05:32", "dv" : "s", "tf" : "n", "and" : "p", "carg" : [ 
 { "cd" : "5", "nmn" : "Senador", "nmm" : "Senador", "nmf" : "Senadora", "nv" : "2", "fed" : [ 
 { "n" : "102", "sg" : "PSOL/REDE", "nm" : "FEDERAÇÃO PSOL REDE", "com" : "PSOL/REDE", "npar" : [ "18", "50" ] }, 
 { "n" : "101", "sg" : "PT/PC do B/PV", "nm" : "FEDERAÇÃO BRASIL DA ESPERANÇA - FE BRASIL", "com" : "PT/PC do B/PV", "npar" : [ "13", "43", "65" ] } ], "agr" : [ 
-{ "n" : "80001801196", "nm" : "AGORA É O FUTURO", "tp" : "c", "com" : "PDT / MDB / PODE / AGIR / PSB / CIDADANIA / PSDB / PP / UNIÃO", "tvtn" : "1149114", "tvan" : "1149114", "par" : [ 
-{ "n" : "40", "sg" : "PSB", "nm" : "PARTIDO SOCIALISTA BRASILEIRO", "nfed" : "", "tvtn" : "986303", "tvan" : "986303", "cand" : [ 
-{ "n" : "400", "sqcand" : "80002551370", "nm" : "JOSÉ RENATO CASAGRANDE", "nmu" : "RENATO CASAGRANDE", "dt" : "03/12/1960", "dvt" : "Válido", "seq" : "1", "e" : "n", "st" : "", "vap" : "986303", "pvap" : "24,67", "pvapn" : "24,666214342", "vs" : [ 
+{ "n" : "80001801196", "nm" : "AGORA É O FUTURO", "tp" : "c", "com" : "PDT / MDB / PODE / AGIR / PSB / CIDADANIA / PSDB / PP / UNIÃO", "tvtn" : "1149974", "tvan" : "1149974", "par" : [ 
+{ "n" : "40", "sg" : "PSB", "nm" : "PARTIDO SOCIALISTA BRASILEIRO", "nfed" : "", "tvtn" : "987049", "tvan" : "987049", "cand" : [ 
+{ "n" : "400", "sqcand" : "80002551370", "nm" : "JOSÉ RENATO CASAGRANDE", "nmu" : "RENATO CASAGRANDE", "dt" : "03/12/1960", "dvt" : "Válido", "seq" : "1", "e" : "n", "st" : "", "vap" : "987049", "pvap" : "24,67", "pvapn" : "24,671081080", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002551367", "nm" : "MARCELO DE SOUZA COELHO", "nmu" : "MARCELO COELHO", "sgp" : "PP" }, 
 { "tp" : "s2", "sqcand" : "80002551371", "nm" : "MARCELO HENRIQUE FERREIRA", "nmu" : "PASTOR MARCELO", "sgp" : "PDT" } ] } ] }, 
-{ "n" : "15", "sg" : "MDB", "nm" : "MOVIMENTO DEMOCRÁTICO BRASILEIRO", "nfed" : "", "tvtn" : "162811", "tvan" : "162811", "cand" : [ 
-{ "n" : "156", "sqcand" : "80002551368", "nm" : "ROSILDA DE FREITAS", "nmu" : "ROSE DE FREITAS", "dt" : "23/01/1949", "dvt" : "Válido", "seq" : "7", "e" : "n", "st" : "", "vap" : "162811", "pvap" : "4,07", "pvapn" : "4,071701113", "vs" : [ 
+{ "n" : "15", "sg" : "MDB", "nm" : "MOVIMENTO DEMOCRÁTICO BRASILEIRO", "nfed" : "", "tvtn" : "162925", "tvan" : "162925", "cand" : [ 
+{ "n" : "156", "sqcand" : "80002551368", "nm" : "ROSILDA DE FREITAS", "nmu" : "ROSE DE FREITAS", "dt" : "23/01/1949", "dvt" : "Válido", "seq" : "7", "e" : "n", "st" : "", "vap" : "162925", "pvap" : "4,07", "pvapn" : "4,072275930", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002554066", "nm" : "MARCUS ANTONIO VICENTE", "nmu" : "MARCUS VICENTE", "sgp" : "PP" }, 
 { "tp" : "s2", "sqcand" : "80002551372", "nm" : "NUBIA ROCHA DOS PASSOS", "nmu" : "NUBIA", "sgp" : "MDB" } ] } ] } ] }, 
-{ "n" : "80001801339", "nm" : "PAZ PRA VIVER UM NOVO TEMPO", "tp" : "c", "com" : "REPUBLICANOS / PL / DEMOCRATA", "tvtn" : "1733291", "tvan" : "1733291", "par" : [ 
-{ "n" : "10", "sg" : "REPUBLICANOS", "nm" : "REPUBLICANOS", "nfed" : "", "tvtn" : "976871", "tvan" : "976871", "cand" : [ 
-{ "n" : "100", "sqcand" : "80002553265", "nm" : "EVAIR VIEIRA DE MELO", "nmu" : "EVAIR DE MELO", "dt" : "02/04/1972", "dvt" : "Válido", "seq" : "2", "e" : "n", "st" : "", "vap" : "976871", "pvap" : "24,43", "pvapn" : "24,430331724", "vs" : [ 
+{ "n" : "80001801339", "nm" : "PAZ PRA VIVER UM NOVO TEMPO", "tp" : "c", "com" : "REPUBLICANOS / PL / DEMOCRATA", "tvtn" : "1733904", "tvan" : "1733904", "par" : [ 
+{ "n" : "10", "sg" : "REPUBLICANOS", "nm" : "REPUBLICANOS", "nfed" : "", "tvtn" : "977263", "tvan" : "977263", "cand" : [ 
+{ "n" : "100", "sqcand" : "80002553265", "nm" : "EVAIR VIEIRA DE MELO", "nmu" : "EVAIR DE MELO", "dt" : "02/04/1972", "dvt" : "Válido", "seq" : "2", "e" : "n", "st" : "", "vap" : "977263", "pvap" : "24,43", "pvapn" : "24,426482078", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002553268", "nm" : "DANT NICCHIO SATHLER", "nmu" : "DANT NICCHIO", "sgp" : "PL" }, 
 { "tp" : "s2", "sqcand" : "80002553264", "nm" : "LUIZ EMANUEL ZOUAIN DA ROCHA", "nmu" : "LUIZ EMANUEL", "sgp" : "REPUBLICANOS" } ] } ] }, 
-{ "n" : "22", "sg" : "PL", "nm" : "PARTIDO LIBERAL", "nfed" : "", "tvtn" : "756420", "tvan" : "756420", "cand" : [ 
-{ "n" : "222", "sqcand" : "80002553269", "nm" : "MAGDA SANTOS MALTA", "nmu" : "MAGUINHA MALTA", "dt" : "24/08/1983", "dvt" : "Válido", "seq" : "3", "e" : "n", "st" : "", "vap" : "756420", "pvap" : "18,92", "pvapn" : "18,917125723", "vs" : [ 
+{ "n" : "22", "sg" : "PL", "nm" : "PARTIDO LIBERAL", "nfed" : "", "tvtn" : "756641", "tvan" : "756641", "cand" : [ 
+{ "n" : "222", "sqcand" : "80002553269", "nm" : "MAGDA SANTOS MALTA", "nmu" : "MAGUINHA MALTA", "dt" : "24/08/1983", "dvt" : "Válido", "seq" : "3", "e" : "n", "st" : "", "vap" : "756641", "pvap" : "18,91", "pvapn" : "18,912081831", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002553266", "nm" : "DIEGO CASSOTTO GOULART", "nmu" : "CABO CASSOTTO", "sgp" : "PL" }, 
 { "tp" : "s2", "sqcand" : "80002553267", "nm" : "NERLEO CAUS DE SOUZA", "nmu" : "NERLEO CAUS", "sgp" : "PL" } ] } ] } ] }, 
 { "n" : "80001801261", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "tp" : "i", "com" : "PSD", "vag" : "0", "par" : [ 
-{ "n" : "55", "sg" : "PSD", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "nfed" : "", "tvtn" : "298936", "tvan" : "298936", "cand" : [ 
-{ "n" : "556", "sqcand" : "80002552692", "nm" : "SERGIO MENEGUELLI", "nmu" : "SERGIO MENEGUELLI", "dt" : "01/06/1956", "dvt" : "Válido", "seq" : "5", "e" : "n", "st" : "", "vap" : "298936", "pvap" : "7,48", "pvapn" : "7,476018475", "vs" : [ 
+{ "n" : "55", "sg" : "PSD", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "nfed" : "", "tvtn" : "299268", "tvan" : "299268", "cand" : [ 
+{ "n" : "556", "sqcand" : "80002552692", "nm" : "SERGIO MENEGUELLI", "nmu" : "SERGIO MENEGUELLI", "dt" : "01/06/1956", "dvt" : "Válido", "seq" : "5", "e" : "n", "st" : "", "vap" : "299268", "pvap" : "7,48", "pvapn" : "7,480140391", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002552691", "nm" : "PEDRO JOSE PAGOTTO", "nmu" : "DR PAGOTTO", "sgp" : "PSD" }, 
 { "tp" : "s2", "sqcand" : "80002552690", "nm" : "ROGÉRIO DA SILVA RESENDE", "nmu" : "DR ROGERIO RESENDE", "sgp" : "PSD" } ] } ] } ] }, 
 { "n" : "80001800326", "nm" : "AVANTE", "tp" : "i", "com" : "AVANTE", "vag" : "0", "par" : [ 
-{ "n" : "70", "sg" : "AVANTE", "nm" : "AVANTE", "nfed" : "", "tvtn" : "166991", "tvan" : "166991", "cand" : [ 
-{ "n" : "700", "sqcand" : "80002538202", "nm" : "MARCOS RIBEIRO DO VAL", "nmu" : "MARCOS DO VAL", "dt" : "15/06/1971", "dvt" : "Válido", "seq" : "6", "e" : "n", "st" : "", "vap" : "166991", "pvap" : "4,18", "pvapn" : "4,176237727", "vs" : [ 
+{ "n" : "70", "sg" : "AVANTE", "nm" : "AVANTE", "nfed" : "", "tvtn" : "167048", "tvan" : "167048", "cand" : [ 
+{ "n" : "700", "sqcand" : "80002538202", "nm" : "MARCOS RIBEIRO DO VAL", "nmu" : "MARCOS DO VAL", "dt" : "15/06/1971", "dvt" : "Válido", "seq" : "6", "e" : "n", "st" : "", "vap" : "167048", "pvap" : "4,18", "pvapn" : "4,175329444", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002538201", "nm" : "SILVIA LIGIA SUASSUNA DE VASCONCELOS", "nmu" : "SILVIA SUASSUNA", "sgp" : "AVANTE" }, 
 { "tp" : "s2", "sqcand" : "80002538200", "nm" : "NILTON FERREIRA GOES", "nmu" : "SARGENTO GOES", "sgp" : "AVANTE" } ] } ] } ] }, 
-{ "n" : "80001800604", "nm" : "SENADO FORTE", "tp" : "c", "com" : "DC / PRD / SOLIDARIEDADE", "tvtn" : "50047", "tvan" : "50047", "par" : [ 
-{ "n" : "27", "sg" : "DC", "nm" : "DEMOCRACIA CRISTÃ", "nfed" : "", "tvtn" : "50047", "tvan" : "50047", "cand" : [ 
-{ "n" : "277", "sqcand" : "80002542401", "nm" : "WELLINGTON CALLEGARI", "nmu" : "CALLEGARI", "dt" : "14/12/1981", "dvt" : "Válido", "seq" : "8", "e" : "n", "st" : "", "vap" : "50047", "pvap" : "1,25", "pvapn" : "1,251613378", "vs" : [ 
+{ "n" : "80001800604", "nm" : "SENADO FORTE", "tp" : "c", "com" : "DC / PRD / SOLIDARIEDADE", "tvtn" : "50054", "tvan" : "50054", "par" : [ 
+{ "n" : "27", "sg" : "DC", "nm" : "DEMOCRACIA CRISTÃ", "nfed" : "", "tvtn" : "50054", "tvan" : "50054", "cand" : [ 
+{ "n" : "277", "sqcand" : "80002542401", "nm" : "WELLINGTON CALLEGARI", "nmu" : "CALLEGARI", "dt" : "14/12/1981", "dvt" : "Válido", "seq" : "8", "e" : "n", "st" : "", "vap" : "50054", "pvap" : "1,25", "pvapn" : "1,251089148", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002542400", "nm" : "BRUNO LOURENCO DE SOUZA", "nmu" : "BRUNO LOURENÇO", "sgp" : "PRD" }, 
 { "tp" : "s2", "sqcand" : "80002542402", "nm" : "PRISCILA DE SOUZA RAMOS", "nmu" : "PRISCILA RAMOS", "sgp" : "SOLIDARIEDADE" } ] } ] } ] }, 
-{ "n" : "80001801092", "nm" : "FEDERAÇÃO BRASIL DA ESPERANÇA - FE BRASIL", "tp" : "f", "com" : "PCDOB / PT / PV", "tvtn" : "516672", "tvan" : "516672", "vag" : "0", "par" : [ 
-{ "n" : "13", "sg" : "PT", "nm" : "PARTIDO DOS TRABALHADORES", "nfed" : "101", "tvtn" : "516672", "tvan" : "516672", "cand" : [ 
-{ "n" : "133", "sqcand" : "80002550187", "nm" : "FABIANO CONTARATO", "nmu" : "FABIANO CONTARATO", "dt" : "20/06/1966", "dvt" : "Válido", "seq" : "4", "e" : "n", "st" : "", "vap" : "516672", "pvap" : "12,92", "pvapn" : "12,921325694", "vs" : [ 
+{ "n" : "80001801092", "nm" : "FEDERAÇÃO BRASIL DA ESPERANÇA - FE BRASIL", "tp" : "f", "com" : "PCDOB / PT / PV", "tvtn" : "517030", "tvan" : "517030", "vag" : "0", "par" : [ 
+{ "n" : "13", "sg" : "PT", "nm" : "PARTIDO DOS TRABALHADORES", "nfed" : "101", "tvtn" : "517030", "tvan" : "517030", "cand" : [ 
+{ "n" : "133", "sqcand" : "80002550187", "nm" : "FABIANO CONTARATO", "nmu" : "FABIANO CONTARATO", "dt" : "20/06/1966", "dvt" : "Válido", "seq" : "4", "e" : "n", "st" : "", "vap" : "517030", "pvap" : "12,92", "pvapn" : "12,923055543", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002550188", "nm" : "EVANI DOS SANTOS REIS", "nmu" : "EVANI GARI", "sgp" : "PT" }, 
 { "tp" : "s2", "sqcand" : "80002550189", "nm" : "NEIO LÚCIO FRAGA PEREIRA", "nmu" : "NEIO LÚCIO", "sgp" : "PCDOB" } ] } ] } ] }, 
 { "n" : "80001801301", "nm" : "PARTIDO RENOVADOR TRABALHISTA BRASILEIRO", "tp" : "i", "com" : "PRTB", "vag" : "0", "par" : [ 
 { "n" : "28", "sg" : "PRTB", "nm" : "PARTIDO RENOVADOR TRABALHISTA BRASILEIRO", "nfed" : "", "tvtn" : "15622", "tvan" : "15622", "cand" : [ 
-{ "n" : "280", "sqcand" : "80002552373", "nm" : "RODNEY ROCHA MIRANDA", "nmu" : "RODNEY MIRANDA", "dt" : "15/09/1964", "dvt" : "Válido", "seq" : "11", "e" : "n", "st" : "", "vap" : "15622", "pvap" : "0,39", "pvapn" : "0,390686838", "vs" : [ 
+{ "n" : "280", "sqcand" : "80002552373", "nm" : "RODNEY ROCHA MIRANDA", "nmu" : "RODNEY MIRANDA", "dt" : "15/09/1964", "dvt" : "Válido", "seq" : "11", "e" : "n", "st" : "", "vap" : "15622", "pvap" : "0,39", "pvapn" : "0,390468587", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002552374", "nm" : "PATRICIA NEITZL DA SILVA", "nmu" : "PATRICIA NEITZL", "sgp" : "PRTB" }, 
 { "tp" : "s2", "sqcand" : "80002552375", "nm" : "RODRIGO RODRIGUES FERREIRA", "nmu" : "RODRIGO RODRIGUES", "sgp" : "PRTB" } ] } ] } ] }, 
 { "n" : "80001799949", "nm" : "PARTIDO NOVO", "tp" : "i", "com" : "NOVO", "vag" : "0", "par" : [ 
-{ "n" : "30", "sg" : "NOVO", "nm" : "PARTIDO NOVO", "nfed" : "", "tvtn" : "25387", "tvan" : "25387", "cand" : [ 
-{ "n" : "300", "sqcand" : "80002530022", "nm" : "LEONARDO PASSOS MONJARDIM", "nmu" : "LEONARDO MONJARDIM", "dt" : "11/06/1973", "dvt" : "Válido", "seq" : "10", "e" : "n", "st" : "", "vap" : "25387", "pvap" : "0,63", "pvapn" : "0,634897373", "vs" : [ 
+{ "n" : "30", "sg" : "NOVO", "nm" : "PARTIDO NOVO", "nfed" : "", "tvtn" : "25388", "tvan" : "25388", "cand" : [ 
+{ "n" : "300", "sqcand" : "80002530022", "nm" : "LEONARDO PASSOS MONJARDIM", "nmu" : "LEONARDO MONJARDIM", "dt" : "11/06/1973", "dvt" : "Válido", "seq" : "10", "e" : "n", "st" : "", "vap" : "25388", "pvap" : "0,63", "pvapn" : "0,634567693", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002530023", "nm" : "KÍTIA COIMBRA PERCIANO", "nmu" : "KÍTIA PERCIANO", "sgp" : "NOVO" }, 
 { "tp" : "s2", "sqcand" : "80002530024", "nm" : "VINÍCIUS FREGONAZZI TAVARES", "nmu" : "DR. VINÍCIUS FREGONAZZI", "sgp" : "NOVO" } ] } ] } ] }, 
-{ "n" : "80001800981", "nm" : "FEDERAÇÃO PSOL REDE", "tp" : "f", "com" : "PSOL / REDE", "tvtn" : "42539", "tvan" : "42539", "vag" : "0", "par" : [ 
-{ "n" : "50", "sg" : "PSOL", "nm" : "PARTIDO SOCIALISMO E LIBERDADE", "nfed" : "102", "tvtn" : "42539", "tvan" : "42539", "cand" : [ 
-{ "n" : "500", "sqcand" : "80002549404", "nm" : "CARLOS FABIAN DE CARVALHO", "nmu" : "PROFESSOR FABIAN", "dt" : "23/02/1977", "dvt" : "Válido", "seq" : "9", "e" : "n", "st" : "", "vap" : "42539", "pvap" : "1,06", "pvapn" : "1,063847613", "vs" : [ 
+{ "n" : "80001800981", "nm" : "FEDERAÇÃO PSOL REDE", "tp" : "f", "com" : "PSOL / REDE", "tvtn" : "42546", "tvan" : "42546", "vag" : "0", "par" : [ 
+{ "n" : "50", "sg" : "PSOL", "nm" : "PARTIDO SOCIALISMO E LIBERDADE", "nfed" : "102", "tvtn" : "42546", "tvan" : "42546", "cand" : [ 
+{ "n" : "500", "sqcand" : "80002549404", "nm" : "CARLOS FABIAN DE CARVALHO", "nmu" : "PROFESSOR FABIAN", "dt" : "23/02/1977", "dvt" : "Válido", "seq" : "9", "e" : "n", "st" : "", "vap" : "42546", "pvap" : "1,06", "pvapn" : "1,063428275", "vs" : [ 
 { "tp" : "s1", "sqcand" : "80002549406", "nm" : "ANTONIO ELIAS MIRANDA GOMES", "nmu" : "TONI CABANO", "sgp" : "PSOL" }, 
 { "tp" : "s2", "sqcand" : "80002549405", "nm" : "WILSON JESUS LUCAS JUNIOR", "nmu" : "WILSON JR", "sgp" : "PSOL" } ] } ] } ] } ] } ], "s" : 
-{ "ts" : "9844", "st" : "9772", "pst" : "99,27", "pstn" : "99,268590004", "snt" : "72", "psnt" : "0,73", "psntn" : "0,731409996", "si" : "9772", "psi" : "100,00", "psin" : "100", "sni" : "0", "psni" : "0,00", "psnin" : "0", "sa" : "9772", "psa" : "100,00", "psan" : "100", "sna" : "0", "psna" : "0,00", "psnan" : "0" }, "e" : 
-{ "te" : "2987584", "est" : "2962944", "pest" : "99,18", "pestn" : "99,175253315", "esnt" : "24640", "pesnt" : "0,82", "pesntn" : "0,824746685", "esi" : "2962944", "pesi" : "100,00", "pesin" : "100", "esni" : "0", "pesni" : "0,00", "pesnin" : "0", "esa" : "2962944", "pesa" : "100,00", "pesan" : "100", "esna" : "0", "pesna" : "0,00", "pesnan" : "0", "c" : "2330089", "pc" : "78,64", "pcn" : "78,641007052", "a" : "632855", "pa" : "21,36", "pan" : "21,358992948" }, "v" : 
-{ "tv" : "4660178", "vvc" : "3998599", "pvvc" : "85,80", "pvvcn" : "85,803568018", "vv" : "3998599", "pvv" : "100,00", "pvvn" : "100", "vnom" : "3998599", "pvnom" : "100,00", "pvnomn" : "100", "van" : "0", "pvan" : "0,00", "pvann" : "0", "vansj" : "0", "pvansj" : "0,00", "pvansjn" : "0", "vb" : "317226", "pvb" : "6,81", "pvbn" : "6,807164877", "tvn" : "344353", "ptvn" : "7,39", "ptvnn" : "7,389267105", "vn" : "344353", "pvn" : "100,00", "pvnn" : "100", "vnt" : "0", "pvnt" : "0,00", "pvntn" : "0", "vsan" : "0", "vscv" : "0" } }
+{ "ts" : "9844", "st" : "9777", "pst" : "99,32", "pstn" : "99,319382365", "snt" : "67", "psnt" : "0,68", "psntn" : "0,680617635", "si" : "9777", "psi" : "100,00", "psin" : "100", "sni" : "0", "psni" : "0,00", "psnin" : "0", "sa" : "9777", "psa" : "100,00", "psan" : "100", "sna" : "0", "psna" : "0,00", "psnan" : "0" }, "e" : 
+{ "te" : "2987584", "est" : "2964549", "pest" : "99,23", "pestn" : "99,228975654", "esnt" : "23035", "pesnt" : "0,77", "pesntn" : "0,771024346", "esi" : "2964549", "pesi" : "100,00", "pesin" : "100", "esni" : "0", "pesni" : "0,00", "pesnin" : "0", "esa" : "2964549", "pesa" : "100,00", "pesan" : "100", "esna" : "0", "pesna" : "0,00", "pesnan" : "0", "c" : "2331354", "pc" : "78,64", "pcn" : "78,641101901", "a" : "633195", "pa" : "21,36", "pan" : "21,358898099" }, "v" : 
+{ "tv" : "4662708", "vvc" : "4000834", "pvvc" : "85,80", "pvvcn" : "85,804944251", "vv" : "4000834", "pvv" : "100,00", "pvvn" : "100", "vnom" : "4000834", "pvnom" : "100,00", "pvnomn" : "100", "van" : "0", "pvan" : "0,00", "pvann" : "0", "vansj" : "0", "pvansj" : "0,00", "pvansjn" : "0", "vb" : "317331", "pvb" : "6,81", "pvbn" : "6,805723198", "tvn" : "344543", "ptvn" : "7,39", "ptvnn" : "7,389332551", "vn" : "344543", "pvn" : "100,00", "pvnn" : "100", "vnt" : "0", "pvnt" : "0,00", "pvntn" : "0", "vsan" : "0", "vscv" : "0" } }
