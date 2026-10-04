@@ -56,6 +56,11 @@ jobs:
               curl -fsSL --retry 3 "$base/6257/dados/$uf/$uf-c0001-e006257-u.json" -o "data/nordeste/$uf.json"
             done
 
+            mkdir -p data/senadores
+            for uf in ac al ap am ba ce df es go ma mt ms mg pa pb pr pe pi rj rn rs ro rr sc sp se to; do
+              curl -fsSL --retry 3 "$base/6259/dados/$uf/$uf-c0005-e006259-u.json" -o "data/senadores/$uf.json"
+            done
+
             jq -s '
               {
                 updated_at: (now | todate),
