@@ -84,6 +84,21 @@ function elected(c){
   const status = String(c.st ?? c.dvt ?? '').toLowerCase();
   return c.e === 's' || c.e === 'S' || status.includes('eleit');
 }
+function candidatesFrom(data){
+  const direct = data.cand || data.candidatos;
+  if(Array.isArray(direct)) return direct;
+  const list=[];
+  for(const cargo of (data.carg || [])){
+    for(const group of (cargo.agr || [])){
+      for(const party of (group.par || [])){
+        for(const candidate of (party.cand || [])){
+          list.push({...candidate, party: party.sg || party.nm || ''});
+        }
+      }
+    }
+  }
+  return list;
+}
 
 app.innerHTML = races.map(r => `
   <section id="${r.id}">
@@ -96,10 +111,10 @@ app.innerHTML = races.map(r => `
 ).join('');
 
 function render(r, data){
-  const candidates = [...(data.cand || data.candidatos || [])].sort((a,b) => number(b.vap)-number(a.vap));
+  const candidates = candidatesFrom(data).sort((a,b) => number(b.vap)-number(a.vap));
   const expanded = state[r.id]?.expanded || false;
   const visible = expanded ? candidates : candidates.slice(0,r.limit);
-  const progress = data.pst ?? data.psa ?? data.psi ?? data.pesi ?? '0,00';
+  const progress = data.s?.pst ?? data.pst ?? '0,00';
 
   document.querySelector('#progress-'+r.id).textContent = percent(progress);
   const body = document.querySelector('#body-'+r.id);
@@ -113,7 +128,7 @@ function render(r, data){
   body.className='';
   body.innerHTML = visible.map(c => `
     <div class="row">
-      <div class="name"><span class="number">${escapeHtml(c.n ?? '')}</span>${escapeHtml(c.nm ?? c.nmu ?? c.nome ?? 'Candidato')}${elected(c)?'<span class="badge">eleito</span>':''}</div>
+      <div class="name"><span class="number">${escapeHtml(c.n ?? '')}</span>${escapeHtml(c.nmu ?? c.nm ?? c.nome ?? 'Candidato')}${elected(c)?'<span class="badge">eleito</span>':''}</div>
       <div class="right"><div class="votes">${formatter.format(number(c.vap))}</div><div class="share">${percent(c.pvap ?? '0,00')}</div></div>
     </div>`
   ).join('') + (candidates.length > r.limit
