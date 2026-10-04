@@ -197,7 +197,7 @@ async function loadNordeste(){
       </div>` +
       states.map(s=>`
         <div class="row">
-          <div class="name">${escapeHtml(ufNames[s.uf] || s.uf || '')}</div>
+          <div class="name">${escapeHtml(ufNames[String(s.uf||'').toUpperCase()] || String(s.uf||'').toUpperCase())}</div>
           <div class="right"><div class="votes">${percent(s.percentual_totalizado)}</div><div class="share">${formatter.format(number(s.secoes_totalizadas))} / ${formatter.format(number(s.total_secoes))} seções</div></div>
         </div>`
       ).join('');
