@@ -40,6 +40,11 @@ jobs:
           sync_once() {
             echo "Sincronizando em $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
+            # Parte sempre do main mais recente para evitar conflito com
+            # alterações na página enquanto a apuração está rodando.
+            git fetch origin main
+            git reset --hard origin/main
+
             curl -fsSL --retry 3 "$base/6257/dados/br/br-c0001-e006257-u.json" -o data/presidente.json
             curl -fsSL --retry 3 "$base/6259/dados/mg/mg-c0003-e006259-u.json" -o data/governador-mg.json
             curl -fsSL --retry 3 "$base/6259/dados/mg/mg-c0005-e006259-u.json" -o data/senador-mg.json
@@ -75,7 +80,6 @@ jobs:
               echo "Sem mudanças."
             else
               git commit -m "Atualiza apuração"
-              git pull --rebase origin main
               git push origin main
             fi
           }
