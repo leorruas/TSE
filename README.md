@@ -1,6 +1,6 @@
 # Apuração 2026 MG
 
-Página simples para acompanhar os resultados das Eleições 2026.
+Página simples para acompanhar a apuração das Eleições 2026:
 
 - Presidente: Brasil
 - Governador: Minas Gerais
@@ -8,8 +8,8 @@ Página simples para acompanhar os resultados das Eleições 2026.
 - Deputado federal: Minas Gerais
 - Deputado estadual: Minas Gerais
 
-Os dados são lidos diretamente dos arquivos JSON oficiais do Tribunal Superior Eleitoral e atualizados no navegador a cada 30 segundos.
+Os arquivos oficiais do TSE são espelhados em `data/` pelo GitHub Actions aproximadamente a cada 5 minutos. A página lê esses arquivos locais, evitando bloqueios de CORS no navegador.
 
-Fonte: https://resultados.tse.jus.br/
+Fonte oficial: https://resultados.tse.jus.br/
 
 Projeto independente, sem vínculo com a Justiça Eleitoral.
