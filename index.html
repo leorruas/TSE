@@ -48,29 +48,24 @@
   <div id="app"></div>
 
   <footer>
-    Atualização automática a cada 30 segundos. Dados oficiais do
-    <a href="https://resultados.tse.jus.br/" target="_blank" rel="noreferrer">Tribunal Superior Eleitoral</a>.
-    Página independente, sem vínculo com a Justiça Eleitoral.
+    Dados oficiais do <a href="https://resultados.tse.jus.br/" target="_blank" rel="noreferrer">Tribunal Superior Eleitoral</a>,
+    sincronizados neste repositório aproximadamente a cada 5 minutos. Página independente, sem vínculo com a Justiça Eleitoral.
   </footer>
 </main>
 
 <script>
-const BASE = 'https://resultados.tse.jus.br/oficial/ele2026';
 const races = [
-  {id:'presidente', title:'Presidente', scope:'Brasil', election:'6257', office:'0001', place:'br', limit:20},
-  {id:'governador', title:'Governador', scope:'Minas Gerais', election:'6259', office:'0003', place:'mg', limit:20},
-  {id:'senador', title:'Senador', scope:'Minas Gerais · 2 vagas', election:'6259', office:'0005', place:'mg', limit:30},
-  {id:'federal', title:'Deputado federal', scope:'Minas Gerais', election:'6259', office:'0006', place:'mg', limit:30},
-  {id:'estadual', title:'Deputado estadual', scope:'Minas Gerais', election:'6259', office:'0007', place:'mg', limit:30}
+  {id:'presidente', title:'Presidente', scope:'Brasil', file:'data/presidente.json', limit:20},
+  {id:'governador', title:'Governador', scope:'Minas Gerais', file:'data/governador-mg.json', limit:20},
+  {id:'senador', title:'Senador', scope:'Minas Gerais · 2 vagas', file:'data/senador-mg.json', limit:30},
+  {id:'federal', title:'Deputado federal', scope:'Minas Gerais', file:'data/deputado-federal-mg.json', limit:30},
+  {id:'estadual', title:'Deputado estadual', scope:'Minas Gerais', file:'data/deputado-estadual-mg.json', limit:30}
 ];
 
 const state = {};
 const app = document.querySelector('#app');
 const formatter = new Intl.NumberFormat('pt-BR');
 
-function url(r){
-  return BASE+'/'+r.election+'/dados/'+r.place+'/'+r.place+'-c'+r.office+'-e00'+r.election+'-u.json';
-}
 function escapeHtml(value=''){
   return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
@@ -134,7 +129,7 @@ function render(r, data){
 
 async function load(r){
   try{
-    const response = await fetch(url(r), {cache:'no-store'});
+    const response = await fetch(r.file+'?t='+Date.now(), {cache:'no-store'});
     if(!response.ok) throw new Error('HTTP '+response.status);
     const data = await response.json();
     state[r.id] = {data, expanded: state[r.id]?.expanded || false};
@@ -143,18 +138,30 @@ async function load(r){
   }catch(error){
     const body = document.querySelector('#body-'+r.id);
     body.className='message error';
-    body.textContent='Não foi possível carregar este resultado agora.';
+    body.textContent='Dados ainda não sincronizados.';
     return false;
   }
 }
 
+async function syncTime(){
+  try{
+    const response=await fetch('data/meta.json?t='+Date.now(),{cache:'no-store'});
+    if(!response.ok) return null;
+    const meta=await response.json();
+    return meta.updated_at ? new Date(meta.updated_at) : null;
+  }catch{return null}
+}
+
 async function refresh(){
-  const results = await Promise.all(races.map(load));
+  const [results, updated] = await Promise.all([
+    Promise.all(races.map(load)),
+    syncTime()
+  ]);
   const loaded = results.filter(Boolean).length;
-  const now = new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-  document.querySelector('#status').textContent = loaded === races.length
-    ? 'Atualizado às '+now
-    : loaded+' de '+races.length+' resultados carregados · '+now;
+  const label = updated
+    ? 'Dados sincronizados às '+updated.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})
+    : loaded ? loaded+' de '+races.length+' resultados carregados' : 'Aguardando primeira sincronização';
+  document.querySelector('#status').textContent = label;
   document.querySelector('#dot').className = 'dot' + (loaded ? ' live' : '');
 }
 
