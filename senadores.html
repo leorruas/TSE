@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <title>Senado 2026 · Brasil</title>
+  <style>
+    :root{--bg:#f4f4f0;--paper:#fff;--ink:#111;--muted:#666;--line:#ddd;--green:#16703d;--red:#a22}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    main{width:min(980px,100%);margin:auto;padding:28px 16px 56px}
+    header{padding:8px 0 24px;border-bottom:1px solid var(--line);margin-bottom:16px}
+    .back{display:inline-block;margin-bottom:14px;color:var(--muted);text-decoration:none;font-size:13px}
+    h1{margin:0 0 9px;font-size:clamp(30px,6vw,48px);line-height:1;letter-spacing:-.045em}
+    header p,.meta{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+    .status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:13px}
+    .dot{width:8px;height:8px;border-radius:50%;background:#999}.dot.live{background:var(--green)}
+    .refresh{margin-left:auto;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:7px 11px;font:inherit;font-size:13px;cursor:pointer}.refresh:disabled{opacity:.55}
+    .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+    .stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px}
+    .stat strong{display:block;font-size:25px;letter-spacing:-.03em}.stat span{font-size:12px;color:var(--muted)}
+    #states{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    section{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    .head{padding:14px 15px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:flex-end}
+    h2{margin:0;font-size:18px;letter-spacing:-.02em}.scope{font-size:12px;color:var(--muted);margin-top:2px}
+    .progress{font-size:16px;font-weight:700;white-space:nowrap}
+    .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 15px;border-bottom:1px solid var(--line)}
+    .row:last-child{border-bottom:0}
+    .name{font-weight:650;min-width:0}.number{color:var(--muted);margin-right:6px;font-weight:500}.party{font-size:12px;color:var(--muted);margin-top:2px}
+    .right{text-align:right}.votes{font-weight:650;font-variant-numeric:tabular-nums}.share{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+    .badge{display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:.05em;border-radius:999px;padding:2px 6px;margin-left:6px;vertical-align:2px;color:#555;border:1px solid #ccc;background:#f7f7f4}
+    .badge.elected{color:var(--green);border-color:#bcd8c8;background:#fff}
+    .message{padding:14px;color:var(--muted);font-size:13px}.error{color:var(--red)}
+    footer{padding:18px 2px;color:var(--muted);font-size:12px;line-height:1.5}footer a{color:inherit}
+    @media(max-width:720px){#states{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.summary .stat:last-child{grid-column:1/-1}}
+    @media(max-width:520px){main{padding:20px 11px 42px}.row,.head{padding-left:13px;padding-right:13px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <a class="back" href="./">← Voltar para a apuração principal</a>
+    <h1>Senado 2026</h1>
+    <p>Os dois candidatos atualmente mais votados em cada estado e no Distrito Federal. São 54 vagas no total. Durante a apuração, “dentro das vagas” indica apenas a posição corrente; “eleito” aparece quando o TSE confirmar.</p>
+    <div class="status" aria-live="polite"><span class="dot" id="dot"></span><span class="meta" id="status">Carregando resultados…</span><button class="refresh" id="refresh" type="button">Recarregar dados</button></div>
+  </header>
+
+  <div class="summary">
+    <div class="stat"><strong>54</strong><span>vagas ao Senado</span></div>
+    <div class="stat"><strong id="confirmed">0</strong><span>eleitos confirmados pelo TSE</span></div>
+    <div class="stat"><strong id="loaded">0/27</strong><span>UFs carregadas</span></div>
+  </div>
+
+  <div id="states"></div>
+
+  <footer>
+    Dados oficiais do <a href="https://resultados.tse.jus.br/" target="_blank" rel="noreferrer">Tribunal Superior Eleitoral</a>, sincronizados durante a apuração. Página independente, sem vínculo com a Justiça Eleitoral.
+  </footer>
+</main>
+
+<script>
+const states = [
+  ['ac','Acre'],['al','Alagoas'],['ap','Amapá'],['am','Amazonas'],['ba','Bahia'],['ce','Ceará'],['df','Distrito Federal'],
+  ['es','Espírito Santo'],['go','Goiás'],['ma','Maranhão'],['mt','Mato Grosso'],['ms','Mato Grosso do Sul'],['mg','Minas Gerais'],
+  ['pa','Pará'],['pb','Paraíba'],['pr','Paraná'],['pe','Pernambuco'],['pi','Piauí'],['rj','Rio de Janeiro'],['rn','Rio Grande do Norte'],
+  ['rs','Rio Grande do Sul'],['ro','Rondônia'],['rr','Roraima'],['sc','Santa Catarina'],['sp','São Paulo'],['se','Sergipe'],['to','Tocantins']
+];
+
+const formatter = new Intl.NumberFormat('pt-BR');
+const root = document.querySelector('#states');
+
+function escapeHtml(value=''){
+  return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function number(value){
+  if(typeof value==='number') return value;
+  const clean=String(value??'0').replace(/\./g,'').replace(',','.');
+  const n=Number(clean); return Number.isFinite(n)?n:0;
+}
+function percent(value){
+  if(value===undefined||value===null||value==='') return '0,00%';
+  const text=String(value); return text.endsWith('%')?text:text+'%';
+}
+function elected(c){
+  const status=String(c.st??c.dvt??'').toLowerCase();
+  return c.e==='s'||c.e==='S'||status.includes('eleit');
+}
+function candidatesFrom(data){
+  const direct=data.cand||data.candidatos;
+  if(Array.isArray(direct)) return direct;
+  const list=[];
+  for(const cargo of (data.carg||[])){
+    for(const group of (cargo.agr||[])){
+      for(const party of (group.par||[])){
+        for(const candidate of (party.cand||[])){
+          list.push({...candidate,party:party.sg||party.nm||''});
+        }
+      }
+    }
+  }
+  return list;
+}
+function candidateRow(c){
+  const badge=elected(c)?'<span class="badge elected">eleito</span>':'<span class="badge">dentro das vagas</span>';
+  return `<div class="row">
+    <div class="name"><span class="number">${escapeHtml(c.n??'')}</span>${escapeHtml(c.nmu??c.nm??'Candidato')}${badge}<div class="party">${escapeHtml(c.party||'')}</div></div>
+    <div class="right"><div class="votes">${formatter.format(number(c.vap))}</div><div class="share">${percent(c.pvap??'0,00')}</div></div>
+  </div>`;
+}
+
+root.innerHTML=states.map(([uf,name])=>`
+  <section id="${uf}">
+    <div class="head">
+      <div><h2>${name}</h2><div class="scope">${uf.toUpperCase()} · 2 vagas</div></div>
+      <div class="progress" id="progress-${uf}">—</div>
+    </div>
+    <div id="body-${uf}" class="message">Carregando…</div>
+  </section>
+`).join('');
+
+async function loadState(uf){
+  const body=document.querySelector('#body-'+uf);
+  try{
+    const response=await fetch('data/senadores/'+uf+'.json?t='+Date.now(),{cache:'no-store'});
+    if(!response.ok) throw new Error('HTTP '+response.status);
+    const data=await response.json();
+    const candidates=candidatesFrom(data).sort((a,b)=>number(b.vap)-number(a.vap)).slice(0,2);
+    document.querySelector('#progress-'+uf).textContent=percent(data.s?.pst??'0,00');
+    if(!candidates.length){
+      body.className='message';
+      body.textContent='Aguardando votos.';
+      return {ok:true,confirmed:0};
+    }
+    body.className='';
+    body.innerHTML=candidates.map(candidateRow).join('');
+    return {ok:true,confirmed:candidates.filter(elected).length};
+  }catch(error){
+    document.querySelector('#progress-'+uf).textContent='—';
+    body.className='message error';
+    body.textContent='Aguardando sincronização.';
+    return {ok:false,confirmed:0};
+  }
+}
+
+async function syncTime(){
+  try{
+    const response=await fetch('data/meta.json?t='+Date.now(),{cache:'no-store'});
+    if(!response.ok) return null;
+    const meta=await response.json();
+    return meta.updated_at?new Date(meta.updated_at):null;
+  }catch{return null}
+}
+function relativeTime(date){
+  const seconds=Math.max(0,Math.floor((Date.now()-date.getTime())/1000));
+  if(seconds<60) return 'há menos de 1 min';
+  const minutes=Math.floor(seconds/60);
+  if(minutes<60) return 'há '+minutes+' min';
+  return 'há '+Math.floor(minutes/60)+' h';
+}
+
+async function refresh(){
+  const button=document.querySelector('#refresh');
+  button.disabled=true; button.textContent='Atualizando…';
+  const [results,updated]=await Promise.all([
+    Promise.all(states.map(([uf])=>loadState(uf))),
+    syncTime()
+  ]);
+  const loaded=results.filter(r=>r.ok).length;
+  const confirmed=results.reduce((sum,r)=>sum+r.confirmed,0);
+  document.querySelector('#loaded').textContent=loaded+'/27';
+  document.querySelector('#confirmed').textContent=confirmed;
+  document.querySelector('#status').textContent=updated
+    ? 'TSE sincronizado '+relativeTime(updated)+' · '+updated.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})
+    : loaded+' de 27 UFs carregadas';
+  document.querySelector('#dot').className='dot'+(loaded?' live':'');
+  button.disabled=false; button.textContent='Recarregar dados';
+}
+
+document.querySelector('#refresh').addEventListener('click',refresh);
+refresh();
+setInterval(refresh,30000);
+</script>
+</body>
+</html>
