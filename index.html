@@ -22,7 +22,7 @@
     .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}
     .row:last-child{border-bottom:0}.name{font-weight:650;overflow:hidden;text-overflow:ellipsis}.number{color:var(--muted);margin-right:7px;font-weight:500}
     .right{text-align:right}.votes{font-weight:650;font-variant-numeric:tabular-nums}.share{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
-    .badge{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--green);border:1px solid #bcd8c8;border-radius:999px;padding:2px 6px;margin-left:7px;vertical-align:2px}
+    .badge{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--green);border:1px solid #bcd8c8;border-radius:999px;padding:2px 6px;margin-left:7px;vertical-align:2px}.badge.current{color:#555;border-color:#ccc;background:#f7f7f4}.head-right{text-align:right}.seats{font-size:12px;color:var(--muted);margin-top:3px;white-space:nowrap}
     .message{padding:16px;color:var(--muted);font-size:14px}.message.error{color:var(--red)}
     .more{width:100%;border:0;border-top:1px solid var(--line);background:#fafaf7;color:var(--ink);padding:11px;font:inherit;font-size:13px;cursor:pointer}
     footer{padding:14px 2px;color:var(--muted);font-size:12px;line-height:1.5}footer a{color:inherit}
@@ -55,11 +55,11 @@
 
 <script>
 const races = [
-  {id:'presidente', title:'Presidente', scope:'Brasil', file:'data/presidente.json', limit:20},
-  {id:'governador', title:'Governador', scope:'Minas Gerais', file:'data/governador-mg.json', limit:20},
-  {id:'senador', title:'Senador', scope:'Minas Gerais · 2 vagas', file:'data/senador-mg.json', limit:30},
-  {id:'federal', title:'Deputado federal', scope:'Minas Gerais', file:'data/deputado-federal-mg.json', limit:30},
-  {id:'estadual', title:'Deputado estadual', scope:'Minas Gerais', file:'data/deputado-estadual-mg.json', limit:30}
+  {id:'presidente', title:'Presidente', scope:'Brasil', file:'data/presidente.json', limit:20, seats:1, type:'majority'},
+  {id:'governador', title:'Governador', scope:'Minas Gerais', file:'data/governador-mg.json', limit:20, seats:1, type:'majority'},
+  {id:'senador', title:'Senador', scope:'Minas Gerais', file:'data/senador-mg.json', limit:30, seats:2, type:'senate'},
+  {id:'federal', title:'Deputado federal', scope:'Minas Gerais', file:'data/deputado-federal-mg.json', limit:53, seats:53, type:'proportional'},
+  {id:'estadual', title:'Deputado estadual', scope:'Minas Gerais', file:'data/deputado-estadual-mg.json', limit:77, seats:77, type:'proportional'}
 ];
 
 const state = {};
@@ -99,12 +99,18 @@ function candidatesFrom(data){
   }
   return list;
 }
+function statusBadge(r, candidate, index){
+  if(elected(candidate)) return '<span class="badge">eleito</span>';
+  if(r.type==='majority' && index===0) return '<span class="badge current">liderando</span>';
+  if(r.type==='senate' && index<r.seats) return '<span class="badge current">dentro das vagas</span>';
+  return '';
+}
 
 app.innerHTML = races.map(r => `
   <section id="${r.id}">
     <div class="head">
       <div><h2>${r.title}</h2><div class="scope">${r.scope}</div></div>
-      <div class="progress" id="progress-${r.id}">0,00%</div>
+      <div class="head-right"><div class="progress" id="progress-${r.id}">0,00%</div><div class="seats" id="seats-${r.id}">${r.seats} ${r.seats===1?'vaga':'vagas'}</div></div>
     </div>
     <div id="body-${r.id}" class="message">Carregando…</div>
   </section>`
@@ -117,6 +123,10 @@ function render(r, data){
   const progress = data.s?.pst ?? data.pst ?? '0,00';
 
   document.querySelector('#progress-'+r.id).textContent = percent(progress);
+  const confirmed = candidates.filter(elected).length;
+  document.querySelector('#seats-'+r.id).textContent =
+    (r.seats===1 ? '1 vaga' : r.seats+' vagas') +
+    (r.type==='proportional' && confirmed ? ' · '+confirmed+' eleitos confirmados' : '');
   const body = document.querySelector('#body-'+r.id);
 
   if(!candidates.length){
@@ -126,9 +136,9 @@ function render(r, data){
   }
 
   body.className='';
-  body.innerHTML = visible.map(c => `
+  body.innerHTML = visible.map((c,index) => `
     <div class="row">
-      <div class="name"><span class="number">${escapeHtml(c.n ?? '')}</span>${escapeHtml(c.nmu ?? c.nm ?? c.nome ?? 'Candidato')}${elected(c)?'<span class="badge">eleito</span>':''}</div>
+      <div class="name"><span class="number">${escapeHtml(c.n ?? '')}</span>${escapeHtml(c.nmu ?? c.nm ?? c.nome ?? 'Candidato')}${statusBadge(r,c,index)}</div>
       <div class="right"><div class="votes">${formatter.format(number(c.vap))}</div><div class="share">${percent(c.pvap ?? '0,00')}</div></div>
     </div>`
   ).join('') + (candidates.length > r.limit
