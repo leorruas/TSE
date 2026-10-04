@@ -1,61 +1,61 @@
 
-{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "go", "dg" : "04/10/2026", "hg" : "20:15:39", "idg" : "1719419", "dt" : "04/10/2026", "ht" : "20:15:27", "dv" : "s", "tf" : "n", "and" : "p", "carg" : [ 
+{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "go", "dg" : "04/10/2026", "hg" : "20:16:38", "idg" : "1724275", "dt" : "04/10/2026", "ht" : "20:16:05", "dv" : "s", "tf" : "n", "and" : "p", "carg" : [ 
 { "cd" : "5", "nmn" : "Senador", "nmm" : "Senador", "nmf" : "Senadora", "nv" : "2", "fed" : [ 
 { "n" : "100", "sg" : "PSDB/CIDADANIA", "nm" : "FEDERAÇÃO PSDB CIDADANIA", "com" : "PSDB/CIDADANIA", "npar" : [ "23", "45" ] }, 
 { "n" : "103", "sg" : "PRD/SOLIDARIEDADE", "nm" : "FEDERAÇÃO RENOVAÇÃO SOLIDÁRIA", "com" : "PRD/SOLIDARIEDADE", "npar" : [ "25", "77" ] }, 
 { "n" : "102", "sg" : "PSOL/REDE", "nm" : "FEDERAÇÃO PSOL REDE", "com" : "PSOL/REDE", "npar" : [ "18", "50" ] }, 
 { "n" : "104", "sg" : "UNIÃO/PP", "nm" : "FEDERAÇÃO UNIÃO PROGRESSISTA", "com" : "UNIÃO/PP", "npar" : [ "11", "44" ] } ], "agr" : [ 
-{ "n" : "90001800538", "nm" : "FEDERAÇÃO RENOVAÇÃO SOLIDÁRIA", "tp" : "f", "com" : "PRD / SOLIDARIEDADE", "tvtn" : "554986", "tvan" : "554986", "vag" : "0", "par" : [ 
-{ "n" : "25", "sg" : "PRD", "nm" : "PARTIDO RENOVACAO DEMOCRATICA", "nfed" : "103", "tvtn" : "554986", "tvan" : "554986", "cand" : [ 
-{ "n" : "251", "sqcand" : "90002540998", "nm" : "GUSTAVO MENDANHA MELO", "nmu" : "GUSTAVO MENDANHA", "dt" : "07/10/1982", "dvt" : "Válido", "seq" : "6", "e" : "n", "st" : "", "vap" : "554986", "pvap" : "8,68", "pvapn" : "8,680817225", "vs" : [ 
+{ "n" : "90001800538", "nm" : "FEDERAÇÃO RENOVAÇÃO SOLIDÁRIA", "tp" : "f", "com" : "PRD / SOLIDARIEDADE", "tvtn" : "555702", "tvan" : "555702", "vag" : "0", "par" : [ 
+{ "n" : "25", "sg" : "PRD", "nm" : "PARTIDO RENOVACAO DEMOCRATICA", "nfed" : "103", "tvtn" : "555702", "tvan" : "555702", "cand" : [ 
+{ "n" : "251", "sqcand" : "90002540998", "nm" : "GUSTAVO MENDANHA MELO", "nmu" : "GUSTAVO MENDANHA", "dt" : "07/10/1982", "dvt" : "Válido", "seq" : "6", "e" : "n", "st" : "", "vap" : "555702", "pvap" : "8,68", "pvapn" : "8,684565737", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002541000", "nm" : "CARLOS CARDOSO DE OLIVEIRA FILHO", "nmu" : "CARLOS FILHO", "sgp" : "PRD" }, 
 { "tp" : "s2", "sqcand" : "90002540999", "nm" : "ALLAN PEREIRA CARDOSO", "nmu" : "CORONEL CARDOSO", "sgp" : "SOLIDARIEDADE" } ] } ] } ] }, 
-{ "n" : "90001800537", "nm" : "FEDERAÇÃO UNIÃO PROGRESSISTA", "tp" : "f", "com" : "PP / UNIÃO", "tvtn" : "1383914", "tvan" : "1383914", "vag" : "0", "par" : [ 
-{ "n" : "44", "sg" : "UNIÃO", "nm" : "UNIÃO BRASIL", "nfed" : "104", "tvtn" : "1383914", "tvan" : "1383914", "cand" : [ 
-{ "n" : "444", "sqcand" : "90002540997", "nm" : "MARIA DAS GRAÇAS LANDIM DE CARVALHO CAIADO", "nmu" : "GRACINHA CAIADO", "dt" : "30/04/1959", "dvt" : "Válido", "seq" : "2", "e" : "n", "st" : "", "vap" : "1383914", "pvap" : "21,65", "pvapn" : "21,646500072", "vs" : [ 
+{ "n" : "90001800537", "nm" : "FEDERAÇÃO UNIÃO PROGRESSISTA", "tp" : "f", "com" : "PP / UNIÃO", "tvtn" : "1385488", "tvan" : "1385488", "vag" : "0", "par" : [ 
+{ "n" : "44", "sg" : "UNIÃO", "nm" : "UNIÃO BRASIL", "nfed" : "104", "tvtn" : "1385488", "tvan" : "1385488", "cand" : [ 
+{ "n" : "444", "sqcand" : "90002540997", "nm" : "MARIA DAS GRAÇAS LANDIM DE CARVALHO CAIADO", "nmu" : "GRACINHA CAIADO", "dt" : "30/04/1959", "dvt" : "Válido", "seq" : "2", "e" : "n", "st" : "", "vap" : "1385488", "pvap" : "21,65", "pvapn" : "21,652543293", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002540996", "nm" : "ALEXANDRE BALDY DE SANT ANNA BRAGA", "nmu" : "ALEXANDRE BALDY", "sgp" : "PP" }, 
 { "tp" : "s2", "sqcand" : "90002540995", "nm" : "MANOEL CASTRO DE ARANTES", "nmu" : "FIÃO", "sgp" : "UNIÃO" } ] } ] } ] }, 
-{ "n" : "90001800848", "nm" : "MOVIMENTO DEMOCRÁTICO BRASILEIRO", "tp" : "i", "com" : "MDB", "vag" : "0", "par" : [ 
-{ "n" : "15", "sg" : "MDB", "nm" : "MOVIMENTO DEMOCRÁTICO BRASILEIRO", "nfed" : "", "tvtn" : "960385", "tvan" : "960385", "cand" : [ 
-{ "n" : "155", "sqcand" : "90002546974", "nm" : "ZACARIAS CALIL HAMU", "nmu" : "DR. ZACHARIAS CALIL", "dt" : "05/11/1953", "dvt" : "Válido", "seq" : "3", "e" : "n", "st" : "", "vap" : "960385", "pvap" : "15,02", "pvapn" : "15,021868390", "vs" : [ 
-{ "tp" : "s1", "sqcand" : "90002554305", "nm" : "LEONARDO MARIANO REIS", "nmu" : "LEONARDO REIS", "sgp" : "MDB" }, 
-{ "tp" : "s2", "sqcand" : "90002546976", "nm" : "MARIA DA CONCEIÇÃO ALVES", "nmu" : "CONCEIÇÃO DO ENTORNO", "sgp" : "MDB" } ] } ] } ] }, 
-{ "n" : "90001800646", "nm" : "GOIAS QUE CRESCE", "tp" : "c", "com" : "PL / NOVO", "tvtn" : "2231447", "tvan" : "2231447", "par" : [ 
-{ "n" : "22", "sg" : "PL", "nm" : "PARTIDO LIBERAL", "nfed" : "", "tvtn" : "2231447", "tvan" : "2231447", "cand" : [ 
-{ "n" : "222", "sqcand" : "90002543556", "nm" : "GUSTAVO GAYER MACHADO DE ARAUJO", "nmu" : "GUSTAVO GAYER", "dt" : "13/04/1981", "dvt" : "Válido", "seq" : "1", "e" : "n", "st" : "", "vap" : "1578093", "pvap" : "24,68", "pvapn" : "24,683752197", "vs" : [ 
+{ "n" : "90001800646", "nm" : "GOIAS QUE CRESCE", "tp" : "c", "com" : "PL / NOVO", "tvtn" : "2232913", "tvan" : "2232913", "par" : [ 
+{ "n" : "22", "sg" : "PL", "nm" : "PARTIDO LIBERAL", "nfed" : "", "tvtn" : "2232913", "tvan" : "2232913", "cand" : [ 
+{ "n" : "222", "sqcand" : "90002543556", "nm" : "GUSTAVO GAYER MACHADO DE ARAUJO", "nmu" : "GUSTAVO GAYER", "dt" : "13/04/1981", "dvt" : "Válido", "seq" : "1", "e" : "n", "st" : "", "vap" : "1579293", "pvap" : "24,68", "pvapn" : "24,681346973", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002543558", "nm" : "LEONARDO CAIRO RIZZO", "nmu" : "LEONARDO RIZZO", "sgp" : "PL" }, 
 { "tp" : "s2", "sqcand" : "90002543555", "nm" : "EMERSON ALVES DE LIMA", "nmu" : "EMERSON LIMA", "sgp" : "PL" } ] }, 
-{ "n" : "227", "sqcand" : "90002543560", "nm" : "OSEIAS MENDES PEREIRA VARÃO", "nmu" : "OSÉIAS VARÃO", "dt" : "25/01/1977", "dvt" : "Válido", "seq" : "4", "e" : "n", "st" : "", "vap" : "653354", "pvap" : "10,22", "pvapn" : "10,219440954", "vs" : [ 
+{ "n" : "227", "sqcand" : "90002543560", "nm" : "OSEIAS MENDES PEREIRA VARÃO", "nmu" : "OSÉIAS VARÃO", "dt" : "25/01/1977", "dvt" : "Válido", "seq" : "4", "e" : "n", "st" : "", "vap" : "653620", "pvap" : "10,21", "pvapn" : "10,214837911", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002543557", "nm" : "TELEMACO BRANDAO", "nmu" : "TELEMACO BRANDÃO", "sgp" : "NOVO" }, 
 { "tp" : "s2", "sqcand" : "90002543559", "nm" : "TEOBALDO DE QUEIROZ GOMES", "nmu" : "TÉO GOMES", "sgp" : "PL" } ] } ] } ] }, 
-{ "n" : "90001800668", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "tp" : "i", "com" : "PSD", "vag" : "0", "par" : [ 
-{ "n" : "55", "sg" : "PSD", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "nfed" : "", "tvtn" : "597880", "tvan" : "597880", "cand" : [ 
-{ "n" : "555", "sqcand" : "90002543215", "nm" : "VANDERLAN VIEIRA CARDOSO", "nmu" : "VANDERLAN CARDOSO", "dt" : "15/11/1962", "dvt" : "Válido", "seq" : "5", "e" : "n", "st" : "", "vap" : "597880", "pvap" : "9,35", "pvapn" : "9,351744012", "vs" : [ 
-{ "tp" : "s1", "sqcand" : "90002543216", "nm" : "PEDRO PINHEIRO CHAVES", "nmu" : "PEDRO CHAVES", "sgp" : "PSD" }, 
-{ "tp" : "s2", "sqcand" : "90002543214", "nm" : "SAMIR HAJJAR", "nmu" : "SAMIR HAJJAR", "sgp" : "PSD" } ] } ] } ] }, 
+{ "n" : "90001800848", "nm" : "MOVIMENTO DEMOCRÁTICO BRASILEIRO", "tp" : "i", "com" : "MDB", "vag" : "0", "par" : [ 
+{ "n" : "15", "sg" : "MDB", "nm" : "MOVIMENTO DEMOCRÁTICO BRASILEIRO", "nfed" : "", "tvtn" : "960728", "tvan" : "960728", "cand" : [ 
+{ "n" : "155", "sqcand" : "90002546974", "nm" : "ZACARIAS CALIL HAMU", "nmu" : "DR. ZACHARIAS CALIL", "dt" : "05/11/1953", "dvt" : "Válido", "seq" : "3", "e" : "n", "st" : "", "vap" : "960728", "pvap" : "15,01", "pvapn" : "15,014352064", "vs" : [ 
+{ "tp" : "s1", "sqcand" : "90002554305", "nm" : "LEONARDO MARIANO REIS", "nmu" : "LEONARDO REIS", "sgp" : "MDB" }, 
+{ "tp" : "s2", "sqcand" : "90002546976", "nm" : "MARIA DA CONCEIÇÃO ALVES", "nmu" : "CONCEIÇÃO DO ENTORNO", "sgp" : "MDB" } ] } ] } ] }, 
 { "n" : "90001801175", "nm" : "UNIDADE POPULAR", "tp" : "i", "com" : "UP", "vag" : "0", "par" : [ 
 { "n" : "80", "sg" : "UP", "nm" : "UNIDADE POPULAR", "nfed" : "", "tvtn" : "6942", "tvan" : "6942", "cand" : [ 
-{ "n" : "800", "sqcand" : "90002551198", "nm" : "GUILHERME DARQUES ALVES DE PAULA", "nmu" : "GUILHERME DARQUES", "dt" : "07/08/1990", "dvt" : "Válido", "seq" : "11", "e" : "n", "st" : "", "vap" : "6942", "pvap" : "0,11", "pvapn" : "0,108583339", "vs" : [ 
+{ "n" : "800", "sqcand" : "90002551198", "nm" : "GUILHERME DARQUES ALVES DE PAULA", "nmu" : "GUILHERME DARQUES", "dt" : "07/08/1990", "dvt" : "Válido", "seq" : "11", "e" : "n", "st" : "", "vap" : "6942", "pvap" : "0,11", "pvapn" : "0,108490262", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002551199", "nm" : "AUGUSTO CARDOSO DE OLIVEIRA", "nmu" : "AUGUSTO CARDOSO", "sgp" : "UP" }, 
 { "tp" : "s2", "sqcand" : "90002551197", "nm" : "VICTOR BARBO DE SIQUEIRA", "nmu" : "VICTOR BARBO", "sgp" : "UP" } ] } ] } ] }, 
-{ "n" : "90001800484", "nm" : "GOIÁS PODE MAIS", "tp" : "c", "com" : "PDT / PSB / PCDOB / PT / PV / PSOL / REDE", "tvtn" : "608684", "tvan" : "608684", "par" : [ 
-{ "n" : "40", "sg" : "PSB", "nm" : "PARTIDO SOCIALISTA BRASILEIRO", "nfed" : "", "tvtn" : "333004", "tvan" : "333004", "cand" : [ 
-{ "n" : "400", "sqcand" : "90002541455", "nm" : "MARIA ISAURA LEMOS", "nmu" : "ISAURA LEMOS", "dt" : "22/05/1954", "dvt" : "Válido", "seq" : "7", "e" : "n", "st" : "", "vap" : "333004", "pvap" : "5,21", "pvapn" : "5,208684290", "vs" : [ 
+{ "n" : "90001800668", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "tp" : "i", "com" : "PSD", "vag" : "0", "par" : [ 
+{ "n" : "55", "sg" : "PSD", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "nfed" : "", "tvtn" : "599014", "tvan" : "599014", "cand" : [ 
+{ "n" : "555", "sqcand" : "90002543215", "nm" : "VANDERLAN VIEIRA CARDOSO", "nmu" : "VANDERLAN CARDOSO", "dt" : "15/11/1962", "dvt" : "Válido", "seq" : "5", "e" : "n", "st" : "", "vap" : "599014", "pvap" : "9,36", "pvapn" : "9,361449950", "vs" : [ 
+{ "tp" : "s1", "sqcand" : "90002543216", "nm" : "PEDRO PINHEIRO CHAVES", "nmu" : "PEDRO CHAVES", "sgp" : "PSD" }, 
+{ "tp" : "s2", "sqcand" : "90002543214", "nm" : "SAMIR HAJJAR", "nmu" : "SAMIR HAJJAR", "sgp" : "PSD" } ] } ] } ] }, 
+{ "n" : "90001800484", "nm" : "GOIÁS PODE MAIS", "tp" : "c", "com" : "PDT / PSB / PCDOB / PT / PV / PSOL / REDE", "tvtn" : "608917", "tvan" : "608917", "par" : [ 
+{ "n" : "40", "sg" : "PSB", "nm" : "PARTIDO SOCIALISTA BRASILEIRO", "nfed" : "", "tvtn" : "333125", "tvan" : "333125", "cand" : [ 
+{ "n" : "400", "sqcand" : "90002541455", "nm" : "MARIA ISAURA LEMOS", "nmu" : "ISAURA LEMOS", "dt" : "22/05/1954", "dvt" : "Válido", "seq" : "7", "e" : "n", "st" : "", "vap" : "333125", "pvap" : "5,21", "pvapn" : "5,206110399", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002541452", "nm" : "VICTOR HENRIQUE DUTRA SANTOS", "nmu" : "VICTOR DUTRA", "sgp" : "PV" }, 
 { "tp" : "s2", "sqcand" : "90002541456", "nm" : "PATRICK DE NORONHA", "nmu" : "PATRICK DE NORONHA", "sgp" : "REDE" } ] } ] }, 
-{ "n" : "50", "sg" : "PSOL", "nm" : "PARTIDO SOCIALISMO E LIBERDADE", "nfed" : "102", "tvtn" : "275680", "tvan" : "275680", "cand" : [ 
-{ "n" : "500", "sqcand" : "90002541454", "nm" : "CINTIA APARECIDA DIAS", "nmu" : "CINTIA DIAS", "dt" : "25/05/1977", "dvt" : "Válido", "seq" : "8", "e" : "n", "st" : "", "vap" : "275680", "pvap" : "4,31", "pvapn" : "4,312050561", "vs" : [ 
+{ "n" : "50", "sg" : "PSOL", "nm" : "PARTIDO SOCIALISMO E LIBERDADE", "nfed" : "102", "tvtn" : "275792", "tvan" : "275792", "cand" : [ 
+{ "n" : "500", "sqcand" : "90002541454", "nm" : "CINTIA APARECIDA DIAS", "nmu" : "CINTIA DIAS", "dt" : "25/05/1977", "dvt" : "Válido", "seq" : "8", "e" : "n", "st" : "", "vap" : "275792", "pvap" : "4,31", "pvapn" : "4,310104613", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002541453", "nm" : "FERNANDO ISAAC BORGES DE FARIA", "nmu" : "FERNANDO ISAAC", "sgp" : "PDT" }, 
 { "tp" : "s2", "sqcand" : "90002541451", "nm" : "PAULO HENRIQUE ROCHIFILD RODRIGUES PEREIRA", "nmu" : "PAULO ROCHIFILD", "sgp" : "PV" } ] } ] } ] }, 
-{ "n" : "90001800661", "nm" : "GOIÁS DE VERDADE", "tp" : "c", "com" : "DC / CIDADANIA / PSDB", "tvtn" : "49008", "tvan" : "49008", "par" : [ 
-{ "n" : "45", "sg" : "PSDB", "nm" : "PARTIDO DA SOCIAL DEMOCRACIA BRASILEIRA", "nfed" : "100", "tvtn" : "27436", "tvan" : "27436", "cand" : [ 
-{ "n" : "456", "sqcand" : "90002545243", "nm" : "ERNESTO GUIMARÃES ROLLER", "nmu" : "ERNESTO ROLLER", "dt" : "11/11/1969", "dvt" : "Válido", "seq" : "9", "e" : "n", "st" : "", "vap" : "27436", "pvap" : "0,43", "pvapn" : "0,429140377", "vs" : [ 
+{ "n" : "90001800661", "nm" : "GOIÁS DE VERDADE", "tp" : "c", "com" : "DC / CIDADANIA / PSDB", "tvtn" : "49027", "tvan" : "49027", "par" : [ 
+{ "n" : "45", "sg" : "PSDB", "nm" : "PARTIDO DA SOCIAL DEMOCRACIA BRASILEIRA", "nfed" : "100", "tvtn" : "27446", "tvan" : "27446", "cand" : [ 
+{ "n" : "456", "sqcand" : "90002545243", "nm" : "ERNESTO GUIMARÃES ROLLER", "nmu" : "ERNESTO ROLLER", "dt" : "11/11/1969", "dvt" : "Válido", "seq" : "9", "e" : "n", "st" : "", "vap" : "27446", "pvap" : "0,43", "pvapn" : "0,428928799", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002545247", "nm" : "MILTON JOSÉ DAS MERCEZ", "nmu" : "MILTON MERCEZ", "sgp" : "PSDB" }, 
 { "tp" : "s2", "sqcand" : "90002545248", "nm" : "HERMES TRALDI NETO", "nmu" : "HERMES TRALDI", "sgp" : "PSDB" } ] } ] }, 
-{ "n" : "23", "sg" : "CIDADANIA", "nm" : "CIDADANIA", "nfed" : "100", "tvtn" : "21572", "tvan" : "21572", "cand" : [ 
-{ "n" : "234", "sqcand" : "90002545244", "nm" : "IURE DE CASTRO SILVA", "nmu" : "IURE CASTRO", "dt" : "21/04/1984", "dvt" : "Válido", "seq" : "10", "e" : "n", "st" : "", "vap" : "21572", "pvap" : "0,34", "pvapn" : "0,337418582", "vs" : [ 
+{ "n" : "23", "sg" : "CIDADANIA", "nm" : "CIDADANIA", "nfed" : "100", "tvtn" : "21581", "tvan" : "21581", "cand" : [ 
+{ "n" : "234", "sqcand" : "90002545244", "nm" : "IURE DE CASTRO SILVA", "nmu" : "IURE CASTRO", "dt" : "21/04/1984", "dvt" : "Válido", "seq" : "10", "e" : "n", "st" : "", "vap" : "21581", "pvap" : "0,34", "pvapn" : "0,337269999", "vs" : [ 
 { "tp" : "s1", "sqcand" : "90002545245", "nm" : "DARLENE COSTA AZEVEDO ARAÚJO", "nmu" : "DARLENE AZEVEDO", "sgp" : "PSDB" }, 
 { "tp" : "s2", "sqcand" : "90002545246", "nm" : "LUIZ OTAVIO DO NASCIMENTO", "nmu" : "LUIZ OTAVIO", "sgp" : "PSDB" } ] } ] } ] } ] } ], "s" : 
-{ "ts" : "15686", "st" : "15008", "pst" : "95,68", "pstn" : "95,677674359", "snt" : "678", "psnt" : "4,32", "psntn" : "4,322325641", "si" : "15008", "psi" : "100,00", "psin" : "100", "sni" : "0", "psni" : "0,00", "psnin" : "0", "sa" : "15008", "psa" : "100,00", "psan" : "100", "sna" : "0", "psna" : "0,00", "psnan" : "0" }, "e" : 
-{ "te" : "5074870", "est" : "4849395", "pest" : "95,56", "pestn" : "95,557029047", "esnt" : "225475", "pesnt" : "4,44", "pesntn" : "4,442970953", "esi" : "4849395", "pesi" : "100,00", "pesin" : "100", "esni" : "0", "pesni" : "0,00", "pesnin" : "0", "esa" : "4849395", "pesa" : "100,00", "pesan" : "100", "esna" : "0", "pesna" : "0,00", "pesnan" : "0", "c" : "3794084", "pc" : "78,24", "pcn" : "78,238295705", "a" : "1055311", "pa" : "21,76", "pan" : "21,761704295" }, "v" : 
-{ "tv" : "7588168", "vvc" : "6393246", "pvvc" : "84,25", "pvvcn" : "84,252826242", "vv" : "6393246", "pvv" : "100,00", "pvvn" : "100", "vnom" : "6393246", "pvnom" : "100,00", "pvnomn" : "100", "van" : "0", "pvan" : "0,00", "pvann" : "0", "vansj" : "0", "pvansj" : "0,00", "pvansjn" : "0", "vb" : "565710", "pvb" : "7,46", "pvbn" : "7,455159137", "tvn" : "629212", "ptvn" : "8,29", "ptvnn" : "8,292014621", "vn" : "629212", "pvn" : "100,00", "pvnn" : "100", "vnt" : "0", "pvnt" : "0,00", "pvntn" : "0", "vsan" : "0", "vscv" : "0" } }
+{ "ts" : "15686", "st" : "15020", "pst" : "95,75", "pstn" : "95,754175698", "snt" : "666", "psnt" : "4,25", "psntn" : "4,245824302", "si" : "15020", "psi" : "100,00", "psin" : "100", "sni" : "0", "psni" : "0,00", "psnin" : "0", "sa" : "15020", "psa" : "100,00", "psan" : "100", "sna" : "0", "psna" : "0,00", "psnan" : "0" }, "e" : 
+{ "te" : "5074870", "est" : "4853435", "pest" : "95,64", "pestn" : "95,636636998", "esnt" : "221435", "pesnt" : "4,36", "pesntn" : "4,363363002", "esi" : "4853435", "pesi" : "100,00", "pesin" : "100", "esni" : "0", "pesni" : "0,00", "pesnin" : "0", "esa" : "4853435", "pesa" : "100,00", "pesan" : "100", "esna" : "0", "pesna" : "0,00", "pesnan" : "0", "c" : "3797148", "pc" : "78,24", "pcn" : "78,236300682", "a" : "1056287", "pa" : "21,76", "pan" : "21,763699318" }, "v" : 
+{ "tv" : "7594296", "vvc" : "6398731", "pvvc" : "84,26", "pvvcn" : "84,257066093", "vv" : "6398731", "pvv" : "100,00", "pvvn" : "100", "vnom" : "6398731", "pvnom" : "100,00", "pvnomn" : "100", "van" : "0", "pvan" : "0,00", "pvann" : "0", "vansj" : "0", "pvansj" : "0,00", "pvansjn" : "0", "vb" : "565966", "pvb" : "7,45", "pvbn" : "7,452514361", "tvn" : "629599", "ptvn" : "8,29", "ptvnn" : "8,290419546", "vn" : "629599", "pvn" : "100,00", "pvnn" : "100", "vnt" : "0", "pvnt" : "0,00", "pvntn" : "0", "vsan" : "0", "vscv" : "0" } }
