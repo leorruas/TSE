@@ -34,7 +34,7 @@
   <header>
     <h1>Apuração 2026 MG</h1>
     <p>Presidente no Brasil e eleições de Minas Gerais.</p>
-    <div class="status" aria-live="polite"><span class="dot" id="dot"></span><span class="meta" id="status">Carregando resultados…</span><button class="refresh" id="refresh" type="button">Atualizar agora</button></div>
+    <div class="status" aria-live="polite"><span class="dot" id="dot"></span><span class="meta" id="status">Carregando resultados…</span><button class="refresh" id="refresh" type="button">Recarregar dados</button></div>
   </header>
 
   <nav aria-label="Ir para cargo">
@@ -176,6 +176,14 @@ async function syncTime(){
     return meta.updated_at ? new Date(meta.updated_at) : null;
   }catch{return null}
 }
+function relativeTime(date){
+  const seconds=Math.max(0,Math.floor((Date.now()-date.getTime())/1000));
+  if(seconds<60) return 'há menos de 1 min';
+  const minutes=Math.floor(seconds/60);
+  if(minutes<60) return 'há '+minutes+' min';
+  const hours=Math.floor(minutes/60);
+  return 'há '+hours+' h';
+}
 
 async function refresh(){
   const button = document.querySelector('#refresh');
@@ -186,11 +194,11 @@ async function refresh(){
   ]);
   const loaded = results.filter(Boolean).length;
   const label = updated
-    ? 'Dados sincronizados às '+updated.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})
+    ? 'TSE sincronizado '+relativeTime(updated)+' · '+updated.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})
     : loaded ? loaded+' de '+races.length+' resultados carregados' : 'Aguardando primeira sincronização';
   document.querySelector('#status').textContent = label;
   document.querySelector('#dot').className = 'dot' + (loaded ? ' live' : '');
-  if(button){ button.disabled = false; button.textContent = 'Atualizar agora'; }
+  if(button){ button.disabled = false; button.textContent = 'Recarregar dados'; }
 }
 
 document.querySelector('#refresh').addEventListener('click', refresh);
