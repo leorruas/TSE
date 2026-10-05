@@ -92,14 +92,12 @@ jobs:
           is_complete() {
             local pending=0
 
-            for file in               data/presidente.json               data/governador-mg.json               data/senador-mg.json               data/deputado-federal-mg.json               data/deputado-estadual-mg.json; do
-              pct="$(jq -r '.s.pstn // 0' "$file")"
-              awk -v p="$pct" 'BEGIN { exit !(p >= 100) }' || pending=1
+            for file in data/presidente.json data/governador-mg.json data/senador-mg.json data/deputado-federal-mg.json data/deputado-estadual-mg.json; do
+              jq -e '(.s.st|tonumber) >= (.s.ts|tonumber)' "$file" >/dev/null || pending=1
             done
 
             for file in data/senadores/*.json; do
-              pct="$(jq -r '.s.pstn // 0' "$file")"
-              awk -v p="$pct" 'BEGIN { exit !(p >= 100) }' || pending=1
+              jq -e '(.s.st|tonumber) >= (.s.ts|tonumber)' "$file" >/dev/null || pending=1
             done
 
             [ "$pending" -eq 0 ]
