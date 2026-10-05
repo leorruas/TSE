@@ -51,32 +51,33 @@ jobs:
             curl -fsSL --retry 3 "$base/6259/dados/mg/mg-c0006-e006259-u.json" -o data/deputado-federal-mg.json
             curl -fsSL --retry 3 "$base/6259/dados/mg/mg-c0007-e006259-u.json" -o data/deputado-estadual-mg.json
 
-            mkdir -p data/nordeste
-            for uf in al ba ce ma pb pe pi rn se; do
-              curl -fsSL --retry 3 "$base/6257/dados/$uf/$uf-c0001-e006257-u.json" -o "data/nordeste/$uf.json"
+            mkdir -p data/presidente-estados
+            for uf in ac al ap am ba ce df es go ma mt ms mg pa pb pr pe pi rj rn rs ro rr sc sp se to; do
+              curl -fsSL --retry 3 "$base/6257/dados/$uf/$uf-c0001-e006257-u.json" -o "data/presidente-estados/$uf.json"
             done
+
+            jq -s '
+              map({
+                uf: (.cdabr | ascii_upcase),
+                total_secoes: (.s.ts|tonumber),
+                secoes_totalizadas: (.s.st|tonumber),
+                percentual_totalizado: .s.pst,
+                candidatos: ([.carg[].agr[].par[].cand[] |
+                  {
+                    numero: .n,
+                    nome: .nmu,
+                    votos: (.vap|tonumber),
+                    percentual: (.pvap|tonumber)
+                  }
+                ] | sort_by(.votos) | reverse)
+              })
+              | sort_by(.uf)
+            ' data/presidente-estados/{ac,al,ap,am,ba,ce,df,es,go,ma,mt,ms,mg,pa,pb,pr,pe,pi,rj,rn,rs,ro,rr,sc,sp,se,to}.json > data/presidente-estados.json
 
             mkdir -p data/senadores
             for uf in ac al ap am ba ce df es go ma mt ms mg pa pb pr pe pi rj rn rs ro rr sc sp se to; do
               curl -fsSL --retry 3 "$base/6259/dados/$uf/$uf-c0005-e006259-u.json" -o "data/senadores/$uf.json"
             done
-
-            jq -s '
-              {
-                updated_at: (now | todate),
-                total_secoes: (map(.s.ts|tonumber) | add),
-                secoes_totalizadas: (map(.s.st|tonumber) | add),
-                percentual_totalizado: (((map(.s.st|tonumber)|add) / (map(.s.ts|tonumber)|add) * 10000 | round) / 100),
-                estados: map({
-                  uf: .cdabr,
-                  total_secoes: (.s.ts|tonumber),
-                  secoes_totalizadas: (.s.st|tonumber),
-                  percentual_totalizado: .s.pst,
-                  data: .dt,
-                  hora: .ht
-                })
-              }
-            ' data/nordeste/{al,ba,ce,ma,pb,pe,pi,rn,se}.json > data/nordeste.json
 
             printf '{"updated_at":"%s"}\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > data/meta.json
 
