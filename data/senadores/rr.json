@@ -1,5 +1,5 @@
 
-{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "rr", "dg" : "04/10/2026", "hg" : "21:06:19", "idg" : "1903861", "dt" : "04/10/2026", "ht" : "20:05:49", "dv" : "s", "tf" : "s", "and" : "f", "esae" : "n", "mnae" : [  ], "carg" : [ 
+{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "rr", "dg" : "04/10/2026", "hg" : "21:09:59", "idg" : "1925251", "dt" : "04/10/2026", "ht" : "20:05:49", "dv" : "s", "tf" : "s", "and" : "f", "esae" : "n", "mnae" : [  ], "carg" : [ 
 { "cd" : "5", "nmn" : "Senador", "nmm" : "Senador", "nmf" : "Senadora", "nv" : "2", "fed" : [ 
 { "n" : "102", "sg" : "PSOL/REDE", "nm" : "FEDERAÇÃO PSOL REDE", "com" : "PSOL/REDE", "npar" : [ "18", "50" ] }, 
 { "n" : "104", "sg" : "UNIÃO/PP", "nm" : "FEDERAÇÃO UNIÃO PROGRESSISTA", "com" : "UNIÃO/PP", "npar" : [ "11", "44" ] }, 
@@ -51,14 +51,14 @@
 { "tp" : "s1", "sqcand" : "230002554072", "nm" : "ALEXANDRE SALOMAO DE OLIVEIRA WILT", "nmu" : "DR. ALEXANDRE SALOMÃO", "sgp" : "PL" }, 
 { "tp" : "s2", "sqcand" : "230002554071", "nm" : "HUMBERTO BRANDÃO DE ARAÚJO", "nmu" : "HUMBERTO BRANDÃO", "sgp" : "PL" } ] } ] } ] }, 
 { "n" : "230001801031", "nm" : "RORAIMA SEGUE EM FRENTE", "tp" : "c", "com" : "REPUBLICANOS / PODE / AGIR / PSD / PP / UNIÃO", "tvtn" : "124698", "tvan" : "124698", "par" : [ 
-{ "n" : "44", "sg" : "UNIÃO", "nm" : "UNIÃO BRASIL", "nfed" : "104", "tvtn" : "18046", "tvan" : "18046", "cand" : [ 
-{ "n" : "444", "sqcand" : "230002553010", "nm" : "ISAMAR PESSOA RAMALHO", "nmu" : "PASTOR ISAMAR", "dt" : "10/01/1963", "dvt" : "Válido", "seq" : "7", "e" : "n", "st" : "Não eleito", "vap" : "18046", "pvap" : "2,96", "pvapn" : "2,960238709", "vs" : [ 
-{ "tp" : "s1", "sqcand" : "230002553009", "nm" : "ISAMAR PESSOA RAMALHO JUNIOR", "nmu" : "ISAMAR JÚNIOR", "sgp" : "UNIÃO" }, 
-{ "tp" : "s2", "sqcand" : "230002553011", "nm" : "RONALDO DE SOUZA DAMASCENO", "nmu" : "RONALDO DAMASCENO", "sgp" : "PP" } ] } ] }, 
 { "n" : "55", "sg" : "PSD", "nm" : "PARTIDO SOCIAL DEMOCRÁTICO", "nfed" : "", "tvtn" : "106652", "tvan" : "106652", "cand" : [ 
 { "n" : "555", "sqcand" : "230002549845", "nm" : "MARIA HELENA TEIXEIRA LIMA", "nmu" : "HELENA DA ASATUR", "dt" : "30/03/1976", "dvt" : "Válido", "seq" : "3", "e" : "n", "st" : "Não eleito", "vap" : "106652", "pvap" : "17,50", "pvapn" : "17,495033735", "vs" : [ 
 { "tp" : "s1", "sqcand" : "230002549843", "nm" : "TANIA SOARES DE SOUZA", "nmu" : "TÂNIA SOARES", "sgp" : "UNIÃO" }, 
-{ "tp" : "s2", "sqcand" : "230002549844", "nm" : "SIMONE ANDRADE QUEIROZ", "nmu" : "SIMONE QUEIROZ", "sgp" : "PSD" } ] } ] } ] }, 
+{ "tp" : "s2", "sqcand" : "230002549844", "nm" : "SIMONE ANDRADE QUEIROZ", "nmu" : "SIMONE QUEIROZ", "sgp" : "PSD" } ] } ] }, 
+{ "n" : "44", "sg" : "UNIÃO", "nm" : "UNIÃO BRASIL", "nfed" : "104", "tvtn" : "18046", "tvan" : "18046", "cand" : [ 
+{ "n" : "444", "sqcand" : "230002553010", "nm" : "ISAMAR PESSOA RAMALHO", "nmu" : "PASTOR ISAMAR", "dt" : "10/01/1963", "dvt" : "Válido", "seq" : "7", "e" : "n", "st" : "Não eleito", "vap" : "18046", "pvap" : "2,96", "pvapn" : "2,960238709", "vs" : [ 
+{ "tp" : "s1", "sqcand" : "230002553009", "nm" : "ISAMAR PESSOA RAMALHO JUNIOR", "nmu" : "ISAMAR JÚNIOR", "sgp" : "UNIÃO" }, 
+{ "tp" : "s2", "sqcand" : "230002553011", "nm" : "RONALDO DE SOUZA DAMASCENO", "nmu" : "RONALDO DAMASCENO", "sgp" : "PP" } ] } ] } ] }, 
 { "n" : "230001800172", "nm" : "DEMOCRACIA CRISTÃ", "tp" : "i", "com" : "DC", "vag" : "0", "par" : [ 
 { "n" : "27", "sg" : "DC", "nm" : "DEMOCRACIA CRISTÃ", "nfed" : "", "tvtn" : "843", "tvan" : "843", "cand" : [ 
 { "n" : "277", "sqcand" : "230002533586", "nm" : "ROGÉRIO MIRANDA", "nmu" : "ROGÉRIO MIRANDA", "dt" : "01/07/1949", "dvt" : "Válido", "seq" : "13", "e" : "n", "st" : "Não eleito", "vap" : "843", "pvap" : "0,14", "pvapn" : "0,138284453", "vs" : [ 
