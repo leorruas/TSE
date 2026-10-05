@@ -89,11 +89,33 @@ jobs:
             fi
           }
 
-          # Mantém um único runner acompanhando a apuração por cerca de 5 horas.
-          # Assim, durante a noite da eleição, não dependemos da pontualidade
-          # do scheduler do GitHub para obter atualização minuto a minuto.
+          is_complete() {
+            local pending=0
+
+            for file in               data/presidente.json               data/governador-mg.json               data/senador-mg.json               data/deputado-federal-mg.json               data/deputado-estadual-mg.json; do
+              pct="$(jq -r '.s.pstn // 0' "$file")"
+              awk -v p="$pct" 'BEGIN { exit !(p >= 100) }' || pending=1
+            done
+
+            for file in data/senadores/*.json; do
+              pct="$(jq -r '.s.pstn // 0' "$file")"
+              awk -v p="$pct" 'BEGIN { exit !(p >= 100) }' || pending=1
+            done
+
+            [ "$pending" -eq 0 ]
+          }
+
+          # Acompanha minuto a minuto até a totalização chegar a 100%.
+          # Se o runner atingir o limite desta execução antes disso, o
+          # agendamento horário inicia outro e continua de onde parou.
           for i in $(seq 1 300); do
             sync_once
+
+            if is_complete; then
+              echo "Apuração acompanhada chegou a 100%. Encerrando sincronização contínua."
+              break
+            fi
+
             if [ "$i" -lt 300 ]; then
               sleep 60
             fi
