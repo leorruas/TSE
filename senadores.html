@@ -67,6 +67,7 @@ const states = [
   ['rs','Rio Grande do Sul'],['ro','Rondônia'],['rr','Roraima'],['sc','Santa Catarina'],['sp','São Paulo'],['se','Sergipe'],['to','Tocantins']
 ];
 
+const DATA_BASE = 'https://raw.githubusercontent.com/leorruas/TSE/main/';
 const formatter = new Intl.NumberFormat('pt-BR');
 const root = document.querySelector('#states');
 
@@ -122,7 +123,7 @@ root.innerHTML=states.map(([uf,name])=>`
 async function loadState(uf){
   const body=document.querySelector('#body-'+uf);
   try{
-    const response=await fetch('data/senadores/'+uf+'.json?t='+Date.now(),{cache:'no-store'});
+    const response=await fetch(DATA_BASE+'data/senadores/'+uf+'.json?t='+Date.now(),{cache:'no-store'});
     if(!response.ok) throw new Error('HTTP '+response.status);
     const data=await response.json();
     const candidates=candidatesFrom(data).sort((a,b)=>number(b.vap)-number(a.vap)).slice(0,2);
@@ -145,7 +146,7 @@ async function loadState(uf){
 
 async function syncTime(){
   try{
-    const response=await fetch('data/meta.json?t='+Date.now(),{cache:'no-store'});
+    const response=await fetch(DATA_BASE+'data/meta.json?t='+Date.now(),{cache:'no-store'});
     if(!response.ok) return null;
     const meta=await response.json();
     return meta.updated_at?new Date(meta.updated_at):null;
