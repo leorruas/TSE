@@ -73,6 +73,7 @@ const races = [
   {id:'estadual', title:'Deputado estadual', scope:'Minas Gerais', file:'data/deputado-estadual-mg.json', limit:77, seats:77, type:'proportional'}
 ];
 
+const DATA_BASE = 'https://raw.githubusercontent.com/leorruas/TSE/main/';
 const state = {};
 const app = document.querySelector('#app');
 const formatter = new Intl.NumberFormat('pt-BR');
@@ -205,7 +206,7 @@ function render(r, data){
 
 async function load(r){
   try{
-    const response = await fetch(r.file+'?t='+Date.now(), {cache:'no-store'});
+    const response = await fetch(DATA_BASE+r.file+'?t='+Date.now(), {cache:'no-store'});
     if(!response.ok) throw new Error('HTTP '+response.status);
     const data = await response.json();
     state[r.id] = {data, expanded: state[r.id]?.expanded || false};
@@ -224,7 +225,7 @@ const ufNames={AL:'Alagoas',BA:'Bahia',CE:'Ceará',MA:'Maranhão',PB:'Paraíba',
 async function loadNordeste(){
   const body=document.querySelector('#nordeste-body');
   try{
-    const response=await fetch('data/nordeste.json?t='+Date.now(),{cache:'no-store'});
+    const response=await fetch(DATA_BASE+'data/nordeste.json?t='+Date.now(),{cache:'no-store'});
     if(!response.ok) throw new Error('HTTP '+response.status);
     const data=await response.json();
     const pct=Number(data.percentual_totalizado ?? 0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';
@@ -253,7 +254,7 @@ async function loadNordeste(){
 
 async function syncTime(){
   try{
-    const response=await fetch('data/meta.json?t='+Date.now(),{cache:'no-store'});
+    const response=await fetch(DATA_BASE+'data/meta.json?t='+Date.now(),{cache:'no-store'});
     if(!response.ok) return null;
     const meta=await response.json();
     return meta.updated_at ? new Date(meta.updated_at) : null;
