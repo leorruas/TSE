@@ -67,7 +67,7 @@ jobs:
                     numero: .n,
                     nome: .nmu,
                     votos: (.vap|tonumber),
-                    percentual: (.pvap|tonumber)
+                    percentual: .pvap
                   }
                 ] | sort_by(.votos) | reverse)
               })
