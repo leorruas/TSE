@@ -103,17 +103,42 @@ function candidatesFrom(data){
     for(const group of (cargo.agr || [])){
       for(const party of (group.par || [])){
         for(const candidate of (party.cand || [])){
-          list.push({...candidate, party: party.sg || party.nm || ''});
+          list.push({...candidate, party: party.sg || party.nm || '', alliance: group.com || group.nm || ''});
         }
       }
     }
   }
   return list;
 }
-function statusBadge(r, candidate, index){
+function proportionalSeatHolders(data){
+  const holders=[];
+  for(const cargo of (data.carg || [])){
+    for(const group of (cargo.agr || [])){
+      const seats=number(group.vag || 0);
+      if(!seats) continue;
+      const groupCandidates=[];
+      for(const party of (group.par || [])){
+        for(const candidate of (party.cand || [])){
+          if(String(candidate.dvt || '').toLowerCase().includes('válido')){
+            groupCandidates.push({...candidate, party: party.sg || party.nm || '', alliance: group.com || group.nm || '', _inSeat:true});
+          }
+        }
+      }
+      groupCandidates.sort((a,b)=>number(b.vap)-number(a.vap));
+      holders.push(...groupCandidates.slice(0,seats));
+    }
+  }
+  return holders.sort((a,b)=>number(b.vap)-number(a.vap));
+}
+function statusBadge(r, candidate, index, progress){
   if(elected(candidate)) return '<span class="badge">eleito</span>';
   if(r.type==='majority' && index===0) return '<span class="badge current">liderando</span>';
   if(r.type==='senate' && index<r.seats) return '<span class="badge current">dentro das vagas</span>';
+  if(r.type==='proportional' && candidate._inSeat){
+    return number(progress) >= 100
+      ? '<span class="badge current">vaga calculada</span>'
+      : '<span class="badge current">dentro das vagas</span>';
+  }
   return '';
 }
 
@@ -128,19 +153,34 @@ app.innerHTML = races.map(r => `
 ).join('');
 
 function render(r, data){
-  const candidates = candidatesFrom(data).sort((a,b) => number(b.vap)-number(a.vap));
-  const expanded = state[r.id]?.expanded || false;
-  const visible = expanded ? candidates : candidates.slice(0,r.limit);
+  const allCandidates = candidatesFrom(data).sort((a,b) => number(b.vap)-number(a.vap));
   const progress = data.s?.pst ?? data.pst ?? '0,00';
+  const expanded = state[r.id]?.expanded || false;
+  const official = allCandidates.filter(elected).sort((a,b)=>number(b.vap)-number(a.vap));
+
+  let ranked = allCandidates;
+  if(r.type==='proportional'){
+    const provisional = proportionalSeatHolders(data);
+    const officialNumbers = new Set(official.map(c=>String(c.n)));
+    const merged = [
+      ...official.map(c=>({...c,_inSeat:true})),
+      ...provisional.filter(c=>!officialNumbers.has(String(c.n)))
+    ];
+    ranked = merged;
+  }
+
+  const visible = expanded ? allCandidates : ranked.slice(0,r.limit);
 
   document.querySelector('#progress-'+r.id).textContent = percent(progress);
-  const confirmed = candidates.filter(elected).length;
+  const confirmed = official.length;
   document.querySelector('#seats-'+r.id).textContent =
     (r.seats===1 ? '1 vaga' : r.seats+' vagas') +
-    (r.type==='proportional' && confirmed ? ' · '+confirmed+' eleitos confirmados' : '');
+    (r.type==='proportional'
+      ? (confirmed ? ' · '+confirmed+' eleitos confirmados' : ' · distribuição provisória')
+      : '');
   const body = document.querySelector('#body-'+r.id);
 
-  if(!candidates.length){
+  if(!allCandidates.length){
     body.className='message';
     body.textContent='Aguardando votos divulgados pelo TSE.';
     return;
@@ -149,11 +189,11 @@ function render(r, data){
   body.className='';
   body.innerHTML = visible.map((c,index) => `
     <div class="row">
-      <div class="name"><span class="number">${escapeHtml(c.n ?? '')}</span>${escapeHtml(c.nmu ?? c.nm ?? c.nome ?? 'Candidato')}${statusBadge(r,c,index)}</div>
+      <div class="name"><span class="number">${escapeHtml(c.n ?? '')}</span>${escapeHtml(c.nmu ?? c.nm ?? c.nome ?? 'Candidato')}${statusBadge(r,c,index,progress)}</div>
       <div class="right"><div class="votes">${formatter.format(number(c.vap))}</div><div class="share">${percent(c.pvap ?? '0,00')}</div></div>
     </div>`
-  ).join('') + (candidates.length > r.limit
-    ? `<button class="more" type="button">${expanded ? 'Mostrar menos' : 'Mostrar todos ('+candidates.length+')'}</button>`
+  ).join('') + (allCandidates.length > r.limit
+    ? `<button class="more" type="button">${expanded ? 'Mostrar apenas os que estão nas vagas' : 'Mostrar todos ('+allCandidates.length+')'}</button>`
     : '');
 
   const button = body.querySelector('.more');
