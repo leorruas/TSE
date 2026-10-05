@@ -16,7 +16,15 @@
     .status{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:13px}.dot{width:8px;height:8px;border-radius:50%;background:#999}.dot.live{background:var(--green)}.refresh{margin-left:auto;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:7px 11px;font:inherit;font-size:13px;cursor:pointer}.refresh:disabled{opacity:.55;cursor:default}
     nav{display:flex;gap:7px;overflow:auto;padding:0 0 14px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
     nav a{white-space:nowrap;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:13px}
-    .region-total{font-size:32px;font-weight:750;letter-spacing:-.03em}.region-summary{padding:16px;border-bottom:1px solid var(--line)}
+    .state-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+    .state-vote{padding:14px 16px;border-bottom:1px solid var(--line)}
+    .state-vote:nth-child(odd){border-right:1px solid var(--line)}
+    .state-vote-head{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:9px}
+    .state-name{font-weight:700}.state-count{font-size:11px;color:var(--muted);white-space:nowrap}
+    .state-stack{display:flex;width:100%;height:11px;border-radius:999px;overflow:hidden;background:#e7e7e2}
+    .state-stack span{display:block;height:100%}.state-stack .first{background:#222}.state-stack .second{background:#888}.state-stack .other{background:#d7d7d2}
+    .state-legend{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-top:8px;font-size:11px;color:var(--muted)}
+    .state-legend strong{color:var(--ink);font-weight:650}.state-legend span:nth-child(2){text-align:center}.state-legend span:last-child{text-align:right}
     section{background:var(--paper);border:1px solid var(--line);border-radius:12px;margin-bottom:13px;overflow:hidden;scroll-margin-top:10px}
     .head{padding:16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:flex-end}
     h2{font-size:20px;letter-spacing:-.02em;margin:0}.scope{font-size:12px;color:var(--muted);margin-top:3px}.progress{font-weight:700;font-size:18px;white-space:nowrap}
@@ -27,7 +35,8 @@
     .message{padding:16px;color:var(--muted);font-size:14px}.message.error{color:var(--red)}
     .more{width:100%;border:0;border-top:1px solid var(--line);background:#fafaf7;color:var(--ink);padding:11px;font:inherit;font-size:13px;cursor:pointer}
     footer{padding:14px 2px;color:var(--muted);font-size:12px;line-height:1.5}footer a{color:inherit}
-    @media(max-width:520px){main{padding:20px 11px 42px}.head,.row{padding-left:13px;padding-right:13px}.votes{font-size:14px}}
+    @media(max-width:680px){.state-grid{grid-template-columns:1fr}.state-vote:nth-child(odd){border-right:0}}
+    @media(max-width:520px){main{padding:20px 11px 42px}.head,.row,.state-vote{padding-left:13px;padding-right:13px}.votes{font-size:14px}}
   </style>
 </head>
 <body>
@@ -39,8 +48,8 @@
   </header>
 
   <nav aria-label="Ir para cargo">
-    <a href="#nordeste">Nordeste</a>
     <a href="#presidente">Presidente</a>
+    <a href="#presidente-estados">Por estado</a>
     <a href="#governador">Governador</a>
     <a href="#senador">Senador MG</a>
     <a href="senadores.html">Senado Brasil ↗</a>
@@ -48,12 +57,12 @@
     <a href="#estadual">Dep. estadual</a>
   </nav>
 
-  <section id="nordeste">
+  <section id="presidente-estados">
     <div class="head">
-      <div><h2>Nordeste apurado</h2><div class="scope">9 estados · Presidente</div></div>
-      <div class="head-right"><div class="progress" id="nordeste-progress">—</div><div class="seats">seções totalizadas</div></div>
+      <div><h2>Presidente por estado</h2><div class="scope">27 unidades da Federação · dois mais votados + outros</div></div>
+      <div class="head-right"><div class="seats">votos válidos</div></div>
     </div>
-    <div id="nordeste-body" class="message">Carregando…</div>
+    <div id="state-votes" class="message">Carregando…</div>
   </section>
 
   <div id="app"></div>
@@ -131,14 +140,26 @@ function proportionalSeatHolders(data){
   }
   return holders.sort((a,b)=>number(b.vap)-number(a.vap));
 }
-function statusBadge(r, candidate, index, progress){
+function complete(data){
+  return number(data.s?.st) >= number(data.s?.ts) && number(data.s?.ts) > 0;
+}
+function statusBadge(r, candidate, index, data){
   if(elected(candidate)) return '<span class="badge">eleito</span>';
-  if(r.type==='majority' && index===0) return '<span class="badge current">liderando</span>';
-  if(r.type==='senate' && index<r.seats) return '<span class="badge current">dentro das vagas</span>';
+  const done=complete(data);
+  if(r.type==='majority'){
+    const all=candidatesFrom(data).sort((a,b)=>number(b.vap)-number(a.vap));
+    const winner=all[0];
+    const firstRound=done && number(winner?.pvap)>50;
+    if(done && firstRound && index===0) return '<span class="badge">eleito</span>';
+    if(done && !firstRound && index<2) return '<span class="badge current">2º turno</span>';
+    if(!done && index===0) return '<span class="badge current">liderando</span>';
+    if(!done && index===1) return '<span class="badge current">2º lugar</span>';
+  }
+  if(r.type==='senate' && index<r.seats){
+    return done ? '<span class="badge">eleito</span>' : '<span class="badge current">dentro das vagas</span>';
+  }
   if(r.type==='proportional' && candidate._inSeat){
-    return number(progress) >= 100
-      ? '<span class="badge current">vaga calculada</span>'
-      : '<span class="badge current">dentro das vagas</span>';
+    return done ? '<span class="badge">eleito</span>' : '<span class="badge current">dentro das vagas</span>';
   }
   return '';
 }
@@ -153,55 +174,51 @@ app.innerHTML = races.map(r => `
   </section>`
 ).join('');
 
-function render(r, data){
-  const allCandidates = candidatesFrom(data).sort((a,b) => number(b.vap)-number(a.vap));
-  const progress = data.s?.pst ?? data.pst ?? '0,00';
-  const expanded = state[r.id]?.expanded || false;
-  const official = allCandidates.filter(elected).sort((a,b)=>number(b.vap)-number(a.vap));
+document.querySelector('#presidente').after(document.querySelector('#presidente-estados'));
 
-  let ranked = allCandidates;
+function render(r, data){
+  const allCandidates=candidatesFrom(data).sort((a,b)=>number(b.vap)-number(a.vap));
+  const progress=data.s?.pst ?? data.pst ?? '0,00';
+  const done=complete(data);
+  const official=allCandidates.filter(elected).sort((a,b)=>number(b.vap)-number(a.vap));
+  let visible=[];
+
   if(r.type==='proportional'){
-    const provisional = proportionalSeatHolders(data);
-    const officialNumbers = new Set(official.map(c=>String(c.n)));
-    const merged = [
-      ...official.map(c=>({...c,_inSeat:true})),
-      ...provisional.filter(c=>!officialNumbers.has(String(c.n)))
-    ];
-    ranked = merged;
+    visible=proportionalSeatHolders(data);
+  }else if(r.type==='senate'){
+    visible=allCandidates.slice(0,r.seats);
+  }else{
+    const firstRoundWinner=done && number(allCandidates[0]?.pvap)>50;
+    visible=firstRoundWinner ? allCandidates.slice(0,1) : allCandidates.slice(0,2);
   }
 
-  const visible = expanded ? allCandidates : ranked.slice(0,r.limit);
+  document.querySelector('#progress-'+r.id).textContent=percent(progress);
+  const seats=document.querySelector('#seats-'+r.id);
 
-  document.querySelector('#progress-'+r.id).textContent = percent(progress);
-  const confirmed = official.length;
-  document.querySelector('#seats-'+r.id).textContent =
-    (r.seats===1 ? '1 vaga' : r.seats+' vagas') +
-    (r.type==='proportional'
-      ? (confirmed ? ' · '+confirmed+' eleitos confirmados' : ' · distribuição provisória')
-      : '');
-  const body = document.querySelector('#body-'+r.id);
+  if(r.type==='majority'){
+    if(done && number(allCandidates[0]?.pvap)>50) seats.textContent='eleito no 1º turno';
+    else if(done) seats.textContent='2º turno';
+    else seats.textContent='apuração em andamento';
+  }else if(r.type==='senate'){
+    seats.textContent=done ? r.seats+' eleitos' : r.seats+' vagas · parcial';
+  }else{
+    seats.textContent=done ? r.seats+' eleitos' : r.seats+' vagas · distribuição provisória';
+  }
 
-  if(!allCandidates.length){
+  const body=document.querySelector('#body-'+r.id);
+  if(!visible.length){
     body.className='message';
     body.textContent='Aguardando votos divulgados pelo TSE.';
     return;
   }
 
   body.className='';
-  body.innerHTML = visible.map((c,index) => `
+  body.innerHTML=visible.map((candidate,index)=>`
     <div class="row">
-      <div class="name"><span class="number">${escapeHtml(c.n ?? '')}</span>${escapeHtml(c.nmu ?? c.nm ?? c.nome ?? 'Candidato')}${statusBadge(r,c,index,progress)}</div>
-      <div class="right"><div class="votes">${formatter.format(number(c.vap))}</div><div class="share">${percent(c.pvap ?? '0,00')}</div></div>
-    </div>`
-  ).join('') + (allCandidates.length > r.limit
-    ? `<button class="more" type="button">${expanded ? 'Mostrar apenas os que estão nas vagas' : 'Mostrar todos ('+allCandidates.length+')'}</button>`
-    : '');
-
-  const button = body.querySelector('.more');
-  if(button) button.onclick = () => {
-    state[r.id].expanded = !state[r.id].expanded;
-    render(r, state[r.id].data);
-  };
+      <div class="name"><span class="number">${escapeHtml(candidate.n ?? '')}</span>${escapeHtml(candidate.nmu ?? candidate.nm ?? candidate.nome ?? 'Candidato')}${statusBadge(r,candidate,index,data)}</div>
+      <div class="right"><div class="votes">${formatter.format(number(candidate.vap))}</div><div class="share">${percent(candidate.pvap ?? '0,00')}</div></div>
+    </div>
+  `).join('');
 }
 
 async function load(r){
@@ -220,34 +237,51 @@ async function load(r){
   }
 }
 
-const ufNames={AL:'Alagoas',BA:'Bahia',CE:'Ceará',MA:'Maranhão',PB:'Paraíba',PE:'Pernambuco',PI:'Piauí',RN:'Rio Grande do Norte',SE:'Sergipe'};
+const ufNames={
+  AC:'Acre',AL:'Alagoas',AP:'Amapá',AM:'Amazonas',BA:'Bahia',CE:'Ceará',DF:'Distrito Federal',
+  ES:'Espírito Santo',GO:'Goiás',MA:'Maranhão',MT:'Mato Grosso',MS:'Mato Grosso do Sul',MG:'Minas Gerais',
+  PA:'Pará',PB:'Paraíba',PR:'Paraná',PE:'Pernambuco',PI:'Piauí',RJ:'Rio de Janeiro',RN:'Rio Grande do Norte',
+  RS:'Rio Grande do Sul',RO:'Rondônia',RR:'Roraima',SC:'Santa Catarina',SP:'São Paulo',SE:'Sergipe',TO:'Tocantins'
+};
 
-async function loadNordeste(){
-  const body=document.querySelector('#nordeste-body');
+async function loadStateVotes(){
+  const body=document.querySelector('#state-votes');
   try{
-    const response=await fetch(DATA_BASE+'data/nordeste.json?t='+Date.now(),{cache:'no-store'});
+    const response=await fetch(DATA_BASE+'data/presidente-estados.json?t='+Date.now(),{cache:'no-store'});
     if(!response.ok) throw new Error('HTTP '+response.status);
-    const data=await response.json();
-    const pct=Number(data.percentual_totalizado ?? 0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';
-    document.querySelector('#nordeste-progress').textContent=pct;
-    const states=[...(data.estados||[])].sort((a,b)=>Number(b.percentual_totalizado)-Number(a.percentual_totalizado));
-    body.className='';
-    body.innerHTML = `
-      <div class="region-summary">
-        <div class="region-total">${pct}</div>
-        <div class="scope">${formatter.format(number(data.secoes_totalizadas))} de ${formatter.format(number(data.total_secoes))} seções totalizadas</div>
-      </div>` +
-      states.map(s=>`
-        <div class="row">
-          <div class="name">${escapeHtml(ufNames[String(s.uf||'').toUpperCase()] || String(s.uf||'').toUpperCase())}</div>
-          <div class="right"><div class="votes">${percent(s.percentual_totalizado)}</div><div class="share">${formatter.format(number(s.secoes_totalizadas))} / ${formatter.format(number(s.total_secoes))} seções</div></div>
-        </div>`
-      ).join('');
+    const statesData=await response.json();
+    statesData.sort((a,b)=>(ufNames[a.uf]||a.uf).localeCompare(ufNames[b.uf]||b.uf,'pt-BR'));
+    body.className='state-grid';
+    body.innerHTML=statesData.map(s=>{
+      const top=(s.candidatos||[]).slice(0,2);
+      const a=top[0]||{};
+      const b=top[1]||{};
+      const pa=Math.max(0,Math.min(100,number(a.percentual)));
+      const pb=Math.max(0,Math.min(100,number(b.percentual)));
+      const po=Math.max(0,100-pa-pb);
+      return `
+        <div class="state-vote">
+          <div class="state-vote-head">
+            <div class="state-name">${escapeHtml(ufNames[s.uf]||s.uf)}</div>
+            <div class="state-count">${percent(s.percentual_totalizado)} das seções</div>
+          </div>
+          <div class="state-stack" aria-label="Votação presidencial em ${escapeHtml(ufNames[s.uf]||s.uf)}">
+            <span class="first" style="width:${pa}%"></span>
+            <span class="second" style="width:${pb}%"></span>
+            <span class="other" style="width:${po}%"></span>
+          </div>
+          <div class="state-legend">
+            <span><strong>${escapeHtml(a.nome||'—')}</strong> ${percent(a.percentual)}</span>
+            <span><strong>${escapeHtml(b.nome||'—')}</strong> ${percent(b.percentual)}</span>
+            <span>Outros ${po.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}%</span>
+          </div>
+        </div>
+      `;
+    }).join('');
     return true;
   }catch(error){
-    document.querySelector('#nordeste-progress').textContent='—';
-    body.className='message';
-    body.textContent='Aguardando a primeira sincronização regional.';
+    body.className='message error';
+    body.textContent='Aguardando os dados estaduais da votação presidencial.';
     return false;
   }
 }
@@ -275,7 +309,7 @@ async function refresh(){
   const [results, updated] = await Promise.all([
     Promise.all(races.map(load)),
     syncTime(),
-    loadNordeste()
+    loadStateVotes()
   ]);
   const loaded = results.filter(Boolean).length;
   const label = updated
