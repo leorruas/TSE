@@ -1,5 +1,5 @@
 
-{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "ro", "dg" : "16/10/2026", "hg" : "16:07:09", "idg" : "3708897", "dt" : "04/10/2026", "ht" : "19:50:40", "dv" : "s", "tf" : "s", "and" : "f", "esae" : "n", "mnae" : [  ], "carg" : [ 
+{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "ro", "dg" : "23/10/2026", "hg" : "19:32:24", "idg" : "3765432", "dt" : "04/10/2026", "ht" : "19:50:40", "dv" : "s", "tf" : "s", "and" : "f", "esae" : "n", "mnae" : [  ], "carg" : [ 
 { "cd" : "5", "nmn" : "Senador", "nmm" : "Senador", "nmf" : "Senadora", "nv" : "2", "fed" : [ 
 { "n" : "104", "sg" : "UNIÃO/PP", "nm" : "FEDERAÇÃO UNIÃO PROGRESSISTA", "com" : "UNIÃO/PP", "npar" : [ "11", "44" ] }, 
 { "n" : "101", "sg" : "PT/PC do B/PV", "nm" : "FEDERAÇÃO BRASIL DA ESPERANÇA - FE BRASIL", "com" : "PT/PC do B/PV", "npar" : [ "13", "43", "65" ] } ], "agr" : [ 
@@ -32,14 +32,14 @@
 { "tp" : "s1", "sqcand" : "220002541945", "nm" : "CLEIDSON MOURA DA SILVA", "nmu" : "CLEIDSON MOURA DA SILVA", "sgp" : "MISSÃO" }, 
 { "tp" : "s2", "sqcand" : "220002541946", "nm" : "MIGUEL CONSTANCE MARTINS", "nmu" : "MIGUEL CONSTANCE MARTINS", "sgp" : "MISSÃO" } ] } ] } ] }, 
 { "n" : "220001801225", "nm" : "FEDERAÇÃO BRASIL DA ESPERANÇA - FE BRASIL", "tp" : "f", "com" : "PCDOB / PT / PV", "tvtn" : "99593", "tvan" : "99593", "vag" : "0", "par" : [ 
-{ "n" : "43", "sg" : "PV", "nm" : "PARTIDO VERDE", "nfed" : "101", "tvtn" : "3202", "tvan" : "3202", "cand" : [ 
-{ "n" : "432", "sqcand" : "220002551946", "nm" : "AIRES MOTA DE ALMEIDA", "nmu" : "AIRES MOTA", "dt" : "22/03/1974", "dvt" : "Válido", "seq" : "10", "e" : "n", "st" : "Não eleito", "vap" : "3202", "pvap" : "0,18", "pvapn" : "0,179362250", "vs" : [ 
-{ "tp" : "s1", "sqcand" : "220002551947", "nm" : "RAIMUNDO SOARES DA COSTA", "nmu" : "TOCO DO STICCERO", "sgp" : "PT" }, 
-{ "tp" : "s2", "sqcand" : "220002551944", "nm" : "LAZARO ELIAS PEREIRA", "nmu" : "LAZARO DA SAÚDE", "sgp" : "PV" } ] } ] }, 
 { "n" : "13", "sg" : "PT", "nm" : "PARTIDO DOS TRABALHADORES", "nfed" : "101", "tvtn" : "96391", "tvan" : "96391", "cand" : [ 
 { "n" : "133", "sqcand" : "220002551948", "nm" : "LUCIANA DE OLIVEIRA E SILVA", "nmu" : "LUCIANA OLIVEIRA", "dt" : "29/11/1972", "dvt" : "Válido", "seq" : "5", "e" : "n", "st" : "Não eleito", "vap" : "96391", "pvap" : "5,40", "pvapn" : "5,399408698", "vs" : [ 
 { "tp" : "s1", "sqcand" : "220002551949", "nm" : "ANTONIO MASIOLI", "nmu" : "TONINHO MASIOLI", "sgp" : "PT" }, 
-{ "tp" : "s2", "sqcand" : "220002551945", "nm" : "PAULO NUNES RIBEIRO", "nmu" : "DR. PAULO NUNES", "sgp" : "PT" } ] } ] } ] }, 
+{ "tp" : "s2", "sqcand" : "220002551945", "nm" : "PAULO NUNES RIBEIRO", "nmu" : "DR. PAULO NUNES", "sgp" : "PT" } ] } ] }, 
+{ "n" : "43", "sg" : "PV", "nm" : "PARTIDO VERDE", "nfed" : "101", "tvtn" : "3202", "tvan" : "3202", "cand" : [ 
+{ "n" : "432", "sqcand" : "220002551946", "nm" : "AIRES MOTA DE ALMEIDA", "nmu" : "AIRES MOTA", "dt" : "22/03/1974", "dvt" : "Válido", "seq" : "10", "e" : "n", "st" : "Não eleito", "vap" : "3202", "pvap" : "0,18", "pvapn" : "0,179362250", "vs" : [ 
+{ "tp" : "s1", "sqcand" : "220002551947", "nm" : "RAIMUNDO SOARES DA COSTA", "nmu" : "TOCO DO STICCERO", "sgp" : "PT" }, 
+{ "tp" : "s2", "sqcand" : "220002551944", "nm" : "LAZARO ELIAS PEREIRA", "nmu" : "LAZARO DA SAÚDE", "sgp" : "PV" } ] } ] } ] }, 
 { "n" : "220001800872", "nm" : "RONDONIA COM A FORÇA DO TRABALHO E DA UNIÃO", "tp" : "c", "com" : "REPUBLICANOS / PP / UNIÃO", "tvtn" : "511459", "tvan" : "511459", "par" : [ 
 { "n" : "10", "sg" : "REPUBLICANOS", "nm" : "REPUBLICANOS", "nfed" : "", "tvtn" : "207398", "tvan" : "207398", "cand" : [ 
 { "n" : "100", "sqcand" : "220002547310", "nm" : "MARIANA FONSECA RIBEIRO CARVALHO DE MORAES", "nmu" : "MARIANA CARVALHO", "dt" : "26/11/1986", "dvt" : "Válido", "seq" : "4", "e" : "n", "st" : "Não eleito", "vap" : "207398", "pvap" : "11,62", "pvapn" : "11,617542771", "vs" : [ 
