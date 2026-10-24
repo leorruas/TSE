@@ -1,5 +1,5 @@
 
-{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "rn", "dg" : "04/10/2026", "hg" : "23:02:10", "idg" : "2445689", "dt" : "04/10/2026", "ht" : "23:01:26", "dv" : "s", "tf" : "s", "and" : "f", "esae" : "n", "mnae" : [  ], "carg" : [ 
+{ "ele" : "6259", "t" : "1", "f" : "o", "sup" : "n", "tpabr" : "uf", "cdabr" : "rn", "dg" : "24/10/2026", "hg" : "12:06:47", "idg" : "3913934", "dt" : "24/10/2026", "ht" : "12:05:28", "dv" : "s", "tf" : "s", "and" : "f", "esae" : "n", "mnae" : [  ], "carg" : [ 
 { "cd" : "5", "nmn" : "Senador", "nmm" : "Senador", "nmf" : "Senadora", "nv" : "2", "fed" : [ 
 { "n" : "101", "sg" : "PT/PC do B/PV", "nm" : "FEDERAÇÃO BRASIL DA ESPERANÇA - FE BRASIL", "com" : "PT/PC do B/PV", "npar" : [ "13", "43", "65" ] }, 
 { "n" : "104", "sg" : "UNIÃO/PP", "nm" : "FEDERAÇÃO UNIÃO PROGRESSISTA", "com" : "UNIÃO/PP", "npar" : [ "11", "44" ] }, 
@@ -21,14 +21,14 @@
 { "tp" : "s1", "sqcand" : "200002549132", "nm" : "JOSE ANANIAS NETO", "nmu" : "JOSÉ NETO", "sgp" : "AGIR" }, 
 { "tp" : "s2", "sqcand" : "200002549134", "nm" : "FRANCISCO ERIVALDO DA COSTA", "nmu" : "ERIVALDO COSTA", "sgp" : "AGIR" } ] } ] } ] }, 
 { "n" : "200001800164", "nm" : "ENDIREITA RN", "tp" : "c", "com" : "PODE / PL / NOVO / CIDADANIA / PSDB / MOBILIZA", "tvtn" : "1675354", "tvan" : "1675354", "par" : [ 
-{ "n" : "20", "sg" : "PODE", "nm" : "PODEMOS", "nfed" : "", "tvtn" : "1055000", "tvan" : "1055000", "cand" : [ 
-{ "n" : "200", "sqcand" : "200002534448", "nm" : "EANN STYVENSON VALENTIM MENDES", "nmu" : "STYVENSON VALENTIM", "dt" : "07/02/1977", "dvt" : "Válido", "seq" : "1", "e" : "s", "st" : "Eleito", "vap" : "1055000", "pvap" : "29,25", "pvapn" : "29,250256321", "vs" : [ 
-{ "tp" : "s1", "sqcand" : "200002534446", "nm" : "ANNE KELLY VALENTIM MENDES", "nmu" : "KELLY VALENTIM", "sgp" : "PODE" }, 
-{ "tp" : "s2", "sqcand" : "200002534444", "nm" : "MILENA GALVAO FERREIRA DE SOUZA", "nmu" : "MILENA GALVÃO", "sgp" : "PSDB" } ] } ] }, 
 { "n" : "22", "sg" : "PL", "nm" : "PARTIDO LIBERAL", "nfed" : "", "tvtn" : "620354", "tvan" : "620354", "cand" : [ 
 { "n" : "222", "sqcand" : "200002534447", "nm" : "HELIO IMBROSIO OLIVEIRA", "nmu" : "CORONEL HÉLIO", "dt" : "27/09/1964", "dvt" : "Válido", "seq" : "4", "e" : "n", "st" : "Não eleito", "vap" : "620354", "pvap" : "17,20", "pvapn" : "17,199538872", "vs" : [ 
 { "tp" : "s1", "sqcand" : "200002534443", "nm" : "VALERIO DJALMA CAVALCANTI MARINHO", "nmu" : "VALÉRIO MARINHO", "sgp" : "PSDB" }, 
-{ "tp" : "s2", "sqcand" : "200002534445", "nm" : "GABRIELA XAVIER DA SILVEIRA PALMA FAGUNDES", "nmu" : "GABRIELA FAGUNDES", "sgp" : "PL" } ] } ] } ] }, 
+{ "tp" : "s2", "sqcand" : "200002534445", "nm" : "GABRIELA XAVIER DA SILVEIRA PALMA FAGUNDES", "nmu" : "GABRIELA FAGUNDES", "sgp" : "PL" } ] } ] }, 
+{ "n" : "20", "sg" : "PODE", "nm" : "PODEMOS", "nfed" : "", "tvtn" : "1055000", "tvan" : "1055000", "cand" : [ 
+{ "n" : "200", "sqcand" : "200002534448", "nm" : "EANN STYVENSON VALENTIM MENDES", "nmu" : "STYVENSON VALENTIM", "dt" : "07/02/1977", "dvt" : "Válido", "seq" : "1", "e" : "s", "st" : "Eleito", "vap" : "1055000", "pvap" : "29,25", "pvapn" : "29,250256321", "vs" : [ 
+{ "tp" : "s1", "sqcand" : "200002534446", "nm" : "ANNE KELLY VALENTIM MENDES", "nmu" : "KELLY VALENTIM", "sgp" : "PODE" }, 
+{ "tp" : "s2", "sqcand" : "200002534444", "nm" : "MILENA GALVAO FERREIRA DE SOUZA", "nmu" : "MILENA GALVÃO", "sgp" : "PSDB" } ] } ] } ] }, 
 { "n" : "200001800248", "nm" : "ESPERANÇA E TRABALHO", "tp" : "c", "com" : "REPUBLICANOS / MDB / PSD / PRD / SOLIDARIEDADE / PP / UNIÃO / AVANTE", "tvtn" : "732993", "tvan" : "732993", "par" : [ 
 { "n" : "44", "sg" : "UNIÃO", "nm" : "UNIÃO BRASIL", "nfed" : "104", "tvtn" : "102834", "tvan" : "102834", "cand" : [ 
 { "n" : "444", "sqcand" : "200002535511", "nm" : "TERCIO BARRETO RAMOS TINOCO", "nmu" : "TÉRCIO TINÔCO", "dt" : "17/06/1987", "dvt" : "Válido", "seq" : "6", "e" : "n", "st" : "Não eleito", "vap" : "102834", "pvap" : "2,85", "pvapn" : "2,851109818", "vs" : [ 
@@ -44,14 +44,14 @@
 { "tp" : "s1", "sqcand" : "200002550542", "nm" : "ELEIDE CRISTIANA DOS SANTOS", "nmu" : "ELEIDE DOS SANTOS", "sgp" : "UP" }, 
 { "tp" : "s2", "sqcand" : "200002550543", "nm" : "LUCICLEIDE FERREIRA DA SILVA LUCAS", "nmu" : "LUCICLEIDE FERREIRA", "sgp" : "UP" } ] } ] } ] }, 
 { "n" : "200001800192", "nm" : "TIME QUE CUIDA", "tp" : "c", "com" : "PDT / PSB / PCDOB / PT / PV", "tvtn" : "1146598", "tvan" : "1146598", "par" : [ 
-{ "n" : "13", "sg" : "PT", "nm" : "PARTIDO DOS TRABALHADORES", "nfed" : "101", "tvtn" : "635924", "tvan" : "635924", "cand" : [ 
-{ "n" : "131", "sqcand" : "200002533841", "nm" : "SAMANDA ALVES DE FREITAS", "nmu" : "SAMANDA DE LULA", "dt" : "20/09/1980", "dvt" : "Válido", "seq" : "2", "e" : "s", "st" : "Eleito", "vap" : "635924", "pvap" : "17,63", "pvapn" : "17,631222749", "vs" : [ 
-{ "tp" : "s1", "sqcand" : "200002533842", "nm" : "GLISIANY PLUVIA DE OLIVEIRA", "nmu" : "PLUVIA OLIVEIRA", "sgp" : "PT" }, 
-{ "tp" : "s2", "sqcand" : "200002533839", "nm" : "OSWALDO GOMES CORREA NEGRAO", "nmu" : "OSWALDO NEGRAO", "sgp" : "PCDOB" } ] } ] }, 
 { "n" : "12", "sg" : "PDT", "nm" : "PARTIDO DEMOCRÁTICO TRABALHISTA", "nfed" : "", "tvtn" : "510674", "tvan" : "510674", "cand" : [ 
 { "n" : "123", "sqcand" : "200002533843", "nm" : "RAFAEL HUETE DA MOTTA", "nmu" : "RAFAEL MOTTA", "dt" : "15/08/1986", "dvt" : "Válido", "seq" : "5", "e" : "n", "st" : "Não eleito", "vap" : "510674", "pvap" : "14,16", "pvapn" : "14,158621229", "vs" : [ 
 { "tp" : "s1", "sqcand" : "200002533840", "nm" : "JEAN PAUL TERRA PRATES", "nmu" : "JEAN PAUL PRATES", "sgp" : "PDT" }, 
-{ "tp" : "s2", "sqcand" : "200002533844", "nm" : "JOAO BATISTA NASCIMENTO DA SILVA", "nmu" : "JOÃO BATISTA", "sgp" : "PV" } ] } ] } ] }, 
+{ "tp" : "s2", "sqcand" : "200002533844", "nm" : "JOAO BATISTA NASCIMENTO DA SILVA", "nmu" : "JOÃO BATISTA", "sgp" : "PV" } ] } ] }, 
+{ "n" : "13", "sg" : "PT", "nm" : "PARTIDO DOS TRABALHADORES", "nfed" : "101", "tvtn" : "635924", "tvan" : "635924", "cand" : [ 
+{ "n" : "131", "sqcand" : "200002533841", "nm" : "SAMANDA ALVES DE FREITAS", "nmu" : "SAMANDA DE LULA", "dt" : "20/09/1980", "dvt" : "Válido", "seq" : "2", "e" : "s", "st" : "Eleito", "vap" : "635924", "pvap" : "17,63", "pvapn" : "17,631222749", "vs" : [ 
+{ "tp" : "s1", "sqcand" : "200002533842", "nm" : "GLISIANY PLUVIA DE OLIVEIRA", "nmu" : "PLUVIA OLIVEIRA", "sgp" : "PT" }, 
+{ "tp" : "s2", "sqcand" : "200002533839", "nm" : "OSWALDO GOMES CORREA NEGRAO", "nmu" : "OSWALDO NEGRAO", "sgp" : "PCDOB" } ] } ] } ] }, 
 { "n" : "200001800841", "nm" : "FEDERAÇÃO PSOL REDE", "tp" : "f", "com" : "PSOL / REDE", "tvtn" : "36575", "tvan" : "36575", "vag" : "0", "par" : [ 
 { "n" : "50", "sg" : "PSOL", "nm" : "PARTIDO SOCIALISMO E LIBERDADE", "nfed" : "102", "tvtn" : "36575", "tvan" : "36575", "cand" : [ 
 { "n" : "500", "sqcand" : "200002546792", "nm" : "SANDRO DE OLIVEIRA PIMENTEL", "nmu" : "SANDRO PIMENTEL", "dt" : "28/05/1966", "dvt" : "Válido", "seq" : "7", "e" : "n", "st" : "Não eleito", "vap" : "22237", "pvap" : "0,62", "pvapn" : "0,616528862", "vs" : [ 
